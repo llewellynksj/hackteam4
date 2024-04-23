@@ -1,9 +1,9 @@
 from django.urls import path
 
-from family import views
+from .views import FamilyListView
 
 app_name = 'family'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', FamilyListView.as_view(), name='family'),
 ]
