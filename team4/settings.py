@@ -110,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
