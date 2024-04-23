@@ -10,27 +10,8 @@ from .models import Child
 
 
 # Create your views here.
-# class FamilyCreateView(LoginRequiredMixin, CreateView):
-#     model = Child
-#     form_class = ChildForm
-#     message = 'You have successfully created a child to your family.'
-#
-#     def get_success_url(self):
-#         messages.success(self.request, self.message)
-#         return reverse_lazy("family:family")
-#
-#     def form_valid(self, form):
-#         """
-#         Once form is valid save to a database
-#         """
-#
-#         if form.is_valid():
-#             instance = form.save(commit=False)
-#             instance.user = self.request.user
-#             instance.save()
-#             return redirect('family:family')
-#         return super().form_valid(form)
 
+# create
 class FamilyCreateView(LoginRequiredMixin, CreateView):
     model = Child
     form_class = ChildForm
@@ -38,6 +19,10 @@ class FamilyCreateView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         messages.success(self.request, self.message)
+        return reverse('family:family')
+
+    def form_invalid(self, form):
+        messages.error(self.request, self.message)
         return reverse('family:family')
 
     def form_valid(self, form):
