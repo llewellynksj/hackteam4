@@ -23,11 +23,3 @@ class ChildForm(forms.ModelForm):
         self.fields['birth_date'].widget.attrs['class'] = 'datepicker'
         self.fields['birth_date'].widget.attrs['max'] = datetime.date.today().strftime(
             '%Y-%m-%d')
-    # def __init__(self, *args, **kwargs):
-    #     super(ChildForm, self).__init__(*args, **kwargs)
-    #
-    #     # sets validation for time_slots field
-    #     self.fields['birth_date'].required = True
-    #     # this sets a validation to enter a date more than 1 hour from now
-    #     self.fields['birth_date'].widget.attrs['min'] = (
-    #             datetime.datetime.now() + datetime.timedelta(hours=1)).strftime('%Y-%m-%d %H:%M')
