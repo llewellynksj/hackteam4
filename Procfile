@@ -1,0 +1,1 @@
+web: gunicorn team4.wsgi
