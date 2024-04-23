@@ -36,7 +36,8 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sign Out</a>
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                               href="{% url 'account_logout' %}">Sign Out</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
