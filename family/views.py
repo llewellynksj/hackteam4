@@ -1,7 +1,9 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.views.generic import ListView, FormView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
+from django.urls import reverse
 
 from .form import ChildForm
 from .models import Child
@@ -12,6 +14,10 @@ class FamilyCreateView(LoginRequiredMixin, CreateView):
     model = Child
     form_class = ChildForm
     message = 'You have successfully created a child to your family.'
+
+    def get_success_url(self):
+        messages.success(self.request, self.message)
+        return reverse('family:family')
 
     def form_valid(self, form):
         """
