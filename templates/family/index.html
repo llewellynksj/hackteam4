@@ -16,16 +16,13 @@
                 <div class="col-8">
                     <h4>Meal Ideas</h4>
                     <div class="form-group">
-                        <form method="POST">
+                        <form method="POST" action="{% url 'family:create' %}">
                             {% csrf_token %}
                             {{ form.as_p }}
-                            <input type="hidden" name="category" value="food">
-                            <input type="text" placeholder="Add meal idea..." id="task" name="description">
                             <button class="btn btn-secondary">Add</button>
                         </form>
                     </div>
                 </div>
-                <div class="col-4">Shopping List</div>
             </div>
         </div>
 
