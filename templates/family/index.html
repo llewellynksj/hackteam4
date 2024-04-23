@@ -5,4 +5,34 @@
         <h1>{{ n.title }}</h1>
     {% endfor %}
 
+    <div class="tab">
+        <button class="tablinks" onclick="openSection(event, 'Food')" id="defaultOpen">Food</button>
+        <button class="tablinks" onclick="openSection(event, 'Laundry')">Laundry</button>
+        <button class="tablinks" onclick="openSection(event, 'Kitchen')">Kitchen</button>
+        <button class="tablinks" onclick="openSection(event, 'Bins')">Bins</button>
+        <button class="tablinks" onclick="openSection(event, 'Other')">Other</button>
+    </div>
+
+    <div id="Food" class="tabcontent">
+        <h3>Food</h3>
+        <div>
+            <div class="d-flex flex-row m-2">
+                <div class="col-8">
+                    <h4>Meal Ideas</h4>
+                    <div class="form-group">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="hidden" name="category" value="food">
+                            <input type="text" placeholder="Add meal idea..." id="task" name="description">
+                            <button class="btn btn-secondary">Add</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-4">Shopping List</div>
+            </div>
+        </div>
+
+    </div>
+
 {% endblock %}
