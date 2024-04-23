@@ -11,8 +11,8 @@ class ChildForm(forms.ModelForm):
 
     class Meta:
         model = Child
-        fields = ['child_name']
-        # widgets = {'birth_date': forms.widgets.DateTimeInput(attrs={'type': 'datetime-local'})}
+        fields = ['child_name', 'birth_date']
+        widgets = {'birth_date': forms.widgets.DateTimeInput(attrs={'type': 'date'})}
 
     # def __init__(self, *args, **kwargs):
     #     super(ChildForm, self).__init__(*args, **kwargs)
