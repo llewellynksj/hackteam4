@@ -2,8 +2,39 @@
 
 {% block content %}
 
-<body>
-  <h1>Household Tasks</h1>
-</body>
+<div>
+  <h1>Household</h1>
+
+  <container>
+    <div class="tab">
+      <button class="tablinks" onclick="openSection(event, 'Food')" id="defaultOpen">Food</button>
+      <button class="tablinks" onclick="openSection(event, 'Laundry')">Laundry</button>
+      <button class="tablinks" onclick="openSection(event, 'Kitchen')">Kitchen</button>
+      <button class="tablinks" onclick="openSection(event, 'Bins')">Bins</button>
+      <button class="tablinks" onclick="openSection(event, 'Other')">Other</button>
+    </div>
+
+    <div id="Food" class="tabcontent">
+      <h3>Food</h3>
+      <p>This is the food section</p>
+    </div>
+
+    <div id="Laundry" class="tabcontent">
+      <h3>Laundry</h3>
+    </div>
+
+    <div id="Kitchen" class="tabcontent">
+      <h3>Kitchen</h3>
+    </div>
+
+    <div id="Bins" class="tabcontent">
+      <h3>Bins</h3>
+    </div>
+
+    <div id="Other" class="tabcontent">
+      <h3>Other</h3>
+    </div>
+  </container>
+</div>
 
 {% endblock %}
