@@ -45,6 +45,4 @@ class FamilyListView(LoginRequiredMixin, FormView):
 
         context['query'] = Child.objects.all()
 
-        print('query', context['query'])
-
         return {'context': context, 'form': self.form_class()}
