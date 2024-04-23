@@ -16,7 +16,7 @@
                 <div class="col-8">
                     <h4>Meal Ideas</h4>
                     <div class="form-group">
-                        <form method="POST" action="{% url 'family:create' %}">
+                        <form method="POST" action="{% url 'family:family_create' %}">
                             {% csrf_token %}
                             {{ form.as_p }}
                             <button class="btn btn-secondary">Add</button>
