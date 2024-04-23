@@ -19,6 +19,6 @@ class Task(models.Model):
   category = models.CharField(max_length=20, choices=TASK_AREAS, default='other')
 
   def __str__(self):
-    return self.description
+    return f'User:{self.user} - {self.category} : {self.description}'
 
 

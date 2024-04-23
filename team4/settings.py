@@ -26,6 +26,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+print(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG')
@@ -85,6 +86,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'team4.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -136,6 +138,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-llewellynksj-hackteam4-qebmxudpc8y.ws-eu110.gitpod.io'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
