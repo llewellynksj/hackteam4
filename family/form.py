@@ -14,6 +14,15 @@ class ChildForm(forms.ModelForm):
         fields = ['child_name', 'birth_date']
         widgets = {'birth_date': forms.widgets.DateTimeInput(attrs={'type': 'date'})}
 
+    def __init__(self, *args, **kwargs):
+        super(ChildForm, self).__init__(*args, **kwargs)
+
+        self.fields['child_name'].required = True
+
+        self.fields['birth_date'].required = True
+        self.fields['birth_date'].widget.attrs['class'] = 'datepicker'
+        self.fields['birth_date'].widget.attrs['max'] = datetime.date.today().strftime(
+            '%Y-%m-%d')
     # def __init__(self, *args, **kwargs):
     #     super(ChildForm, self).__init__(*args, **kwargs)
     #
