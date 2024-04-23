@@ -85,9 +85,7 @@ ASGI_APPLICATION = 'team4.asgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        dj_database_url.parse(os.environ.get('DJANGO_DATABASE_URL'))
-    }
+    'default': dj_database_url.parse(os.environ.get('DJANGO_DATABASE_URL'))
 }
 
 # Password validation
