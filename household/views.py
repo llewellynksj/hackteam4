@@ -11,3 +11,5 @@ def display_household(request):
   }
 
   return render(request, 'household.html', context)
+
+
