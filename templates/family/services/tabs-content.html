@@ -1,0 +1,25 @@
+<div class="tab-content container" id="nav-tabContent">
+    {% for query in context.queryset %}
+        {% if forloop.first %}
+            <div class="tab-pane fade show active" id="nav-{{ query.name }}" role="tabpanel"
+                 aria-labelledby="nav-{{ query.name }}-tab"
+                 tabindex="0">
+                <p>Name: {{ query.name }}</p>
+                <p>Age: {{ query.age.0 }} {% if query.age.0 == 1 %}year{% else %}
+                    years{% endif %} {{ query.age.1 }} {% if query.age.1 == 1 %}month{% else %}
+                    months{% endif %} {{ query.age.2 }} {% if query.age.2 == 1 %}day{% else %}
+                    days{% endif %}</p>
+            </div>
+        {% else %}
+            <div class="tab-pane fade" id="nav-{{ query.name }}" role="tabpanel"
+                 aria-labelledby="nav-{{ query.name }}-tab"
+                 tabindex="0">
+                <p>Name: {{ query.name }}</p>
+                <p>Age: {{ query.age.0 }} {% if query.age.0 == 1 %}year{% else %}
+                    years{% endif %} {{ query.age.1 }} {% if query.age.1 == 1 %}month{% else %}
+                    months{% endif %} {{ query.age.2 }} {% if query.age.2 == 1 %}day{% else %}
+                    days{% endif %}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
