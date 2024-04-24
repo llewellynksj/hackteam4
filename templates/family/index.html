@@ -31,6 +31,24 @@
                 {% endfor %}
             </div>
         </nav>
+
+        <div class="container">
+            <div class="tab-content" id="nav-tabContent">
+                {% for query in context.queryset %}
+                    {% if forloop.first %}
+                        <div class="tab-pane fade show active" id="nav-{{ query.child_name }}" role="tabpanel"
+                             aria-labelledby="nav-{{ query.child_name }}-tab"
+                             tabindex="0">{{ query.child_name }}
+                        </div>
+                    {% else %}
+                        <div class="tab-pane fade" id="nav-{{ query.child_name }}" role="tabpanel"
+                             aria-labelledby="nav-{{ query.child_name }}-tab"
+                             tabindex="0">{{ query.child_name }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
     {% endif %}
 
     {#    <nav>#}
