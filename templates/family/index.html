@@ -1,19 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="tab">
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Much longer nav link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+    </ul>
 
-        {% for queryset in context.queryset %}
 
-            <button class="tablinks"
-                    onclick="openSection(event, queryset.child_name)">{{ queryset.child_name }}</button>
-        {% endfor %}
-
-        <button class="tablinks" onclick="openSection(event, 'Child')" id="defaultOpen">Child</button>
-
-    </div>
-
+    {#    <div class="tab">#}
+    {##}
+    {#        {% for queryset in context.queryset %}#}
+    {#            {% if forloop.first %}#}
+    {#                <button class="tablinks"#}
+    {#                        onclick="openSection(event, {{ queryset.child_name }})">{{ queryset.child_name }}</button>#}
+    {#            {% else %}#}
+    {#                <button class="tablinks"#}
+    {#                        onclick="openSection(event, {{ queryset.child_name }})">{{ queryset.child_name }}</button>#}
+    {#            {% endif %}#}
+    {#        {% endfor %}#}
+    {##}
+    {#        <button class="tablinks" id="defaultOpen" onclick="openSection(event, 'Child')">Child</button>#}
+    {##}
+    {#        <div id="{{ queryset.child_name }}" class="tabcontent">#}
+    {#            <h3>Add Child</h3>#}
+    {#            <div>#}
+    {#                <div class="d-flex flex-row m-2">#}
+    {#                    <div class="col-8">#}
+    {#                        <h4>Meal Ideas</h4>#}
+    {#                        <div class="form-group">#}
+    {#                            <form method="POST" action="{% url 'family:family_create' %}">#}
+    {#                                {% csrf_token %}#}
+    {#                                {{ form.as_p }}#}
+    {#                                <button class="btn btn-secondary">Add</button>#}
+    {#                            </form>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {##}
+    {#    </div>#}
+    {##}
     {#    add child page#}
-    {% include 'family/services/child_tab.html' %}
+    {#    {% include 'family/services/child_tab.html' %}#}
 
 {% endblock %}
