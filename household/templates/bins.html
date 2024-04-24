@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="mt-3">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'food' %}">Food</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'laundry' %}">Laundry</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'kitchen' %}">Kitchen</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'bins' %}">Bins</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'general' %}">General</a>
+    </li>
+  </ul>
+</div>
+
+<div class="m-4">
+  <div class="d-flex flex-md-row flex-column m-2">
+    <div class="col-sm-12 col-md-7">
+
+      <!-- Bin collection details -->
+      <div class="my-4">
+        {% if queryset %}
+        {% for bin in queryset %}
+        {% if bin.next_collection_date %}
+        <h3 class="text-center">Your next bin collection is {{ bin.get_next_collection_day }}</h3>
+        <p class="mb-4 text-center">
+          Next Collection Date: {{ bin.next_collection_date }}
+          {% else %}
+          No collection date set
+          {% endif %}
+        </p>
+        <p class="text-center">
+
+        </p>
+        {% endfor %}
+      </div>
+
+      {% else %}
+      <!-- Bin details form -->
+      <div class="">
+        <p class="mt-3 text-center">You haven't added any bins yet</p>
+        {% endif %}
+        <h4 class="mt-4">Add your bin details</h4>
+        <div class="form-group">
+          <form method="POST">
+            {% csrf_token %}
+            {{ bins_form.as_p }}
+            <input type="submit" value="Add" class="btn btn-secondary mb-4">
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}
