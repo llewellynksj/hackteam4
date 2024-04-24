@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.contrib import messages
 from django.shortcuts import render
 from django.views.generic import ListView, FormView, CreateView
@@ -38,12 +39,17 @@ class FamilyListView(LoginRequiredMixin, FormView):
     model = Child
     form_class = ChildForm
 
+    def days_old(self):
+        pass
+
     def get_queryset(self):
         """
         Built in method used to fetch data from a database
         """
 
-        return self.model.objects.filter(user=self.request.user).values()
+        data = self.model.objects.filter(user=self.request.user).values()
+
+        return data
 
     def get_context_data(self, **kwargs):
         """
@@ -53,5 +59,17 @@ class FamilyListView(LoginRequiredMixin, FormView):
         context = super(FamilyListView, self).get_context_data(**kwargs)
 
         context['queryset'] = self.get_queryset()
+
+        # date_format = '%m/%d/%Y'
+        #
+        # birth_date = datetime.strptime(context['queryset'][0]['birth_date'].strftime(date_format), date_format)
+        #
+        # now = datetime.strptime(datetime.today().strftime(date_format), date_format)
+        #
+        # delta = (now - birth_date).days
+        #
+        # print('birth_date', birth_date)
+        # print('now', now)
+        # print('delta', delta)
 
         return {'context': context, 'form': self.form_class()}
