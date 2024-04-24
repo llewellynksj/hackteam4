@@ -46,6 +46,10 @@ class FamilyListView(LoginRequiredMixin, FormView):
         return self.model.objects.filter(user=self.request.user).values()
 
     def get_context_data(self, **kwargs):
+        """
+        Built in method used to send data to template
+        """
+
         context = super(FamilyListView, self).get_context_data(**kwargs)
 
         context['name'] = ['family']
