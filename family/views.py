@@ -96,15 +96,18 @@ class FamilyListView(LoginRequiredMixin, FormView):
         Built in method used to fetch data from a database
         """
 
-        # fetches data from database
+        # fetches children from db based on logged-in username
         data = self.model.objects.filter(user=self.request.user).values()
+        tasks = ChildTasks.objects.filter(user=self.request.user, ).values()
+
         # empty list used to return only the data that I want
         context = []
 
         # for loop used to iterate over data, and return only name and age
         for d in data:
             # dictionary literal to append to for fetching name and age from data
-            obj = {'name': d['child_name'], 'age': self.get_age(d['birth_date'])}
+            obj = {'name': d['child_name'], 'age': self.get_age(d['birth_date']), 'tasks': [i for i in tasks]}
+
             # once gathered correct data append to a context list
             context.append(obj)
 
