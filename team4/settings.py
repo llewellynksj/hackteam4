@@ -148,7 +148,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-llewellynksj-hackteam4-yasjyn4lu59.ws-eu110.gitpod.io'
+    'https://8000-llewellynksj-hackteam4-qebmxudpc8y.ws-eu110.gitpod.io'
 ]
 
 # Default primary key field type
