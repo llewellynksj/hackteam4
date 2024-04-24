@@ -11,7 +11,7 @@ class Child(models.Model):
     updated_at = models.DateField(auto_now=True)
 
     class Meta:
-        ordering = ['user', 'child_name']
+        ordering = ['child_name']
 
     def __str__(self):
         return f'Parent: {self.user} of {self.child_name}'
