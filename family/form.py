@@ -23,3 +23,18 @@ class ChildForm(forms.ModelForm):
         self.fields['birth_date'].widget.attrs['class'] = 'datepicker'
         self.fields['birth_date'].widget.attrs['max'] = datetime.date.today().strftime(
             '%Y-%m-%d')
+
+
+class DailyTaskForm(forms.ModelForm):
+    """
+    Form for creating daily tasks
+    """
+
+    class Meta:
+        model = ChildTasks
+        fields = ['daily_tasks']
+
+    def __init__(self, *args, **kwargs):
+        super(DailyTaskForm, self).__init__(*args, **kwargs)
+
+        self.fields['daily_tasks'].required = True
