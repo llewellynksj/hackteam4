@@ -9,6 +9,9 @@
                     years{% endif %} {{ query.age.1 }} {% if query.age.1 == 1 %}month{% else %}
                     months{% endif %} {{ query.age.2 }} {% if query.age.2 == 1 %}day{% else %}
                     days{% endif %}</p>
+
+                {% include 'family/services/cards.html' %}
+
             </div>
         {% else %}
             <div class="tab-pane fade" id="nav-{{ query.name }}" role="tabpanel"
@@ -19,7 +22,12 @@
                     years{% endif %} {{ query.age.1 }} {% if query.age.1 == 1 %}month{% else %}
                     months{% endif %} {{ query.age.2 }} {% if query.age.2 == 1 %}day{% else %}
                     days{% endif %}</p>
+
+                {% include 'family/services/cards.html' %}
+
             </div>
+
         {% endif %}
     {% endfor %}
 </div>
+

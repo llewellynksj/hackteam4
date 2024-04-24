@@ -19,9 +19,9 @@ class Child(models.Model):
 
 class ChildTasks(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    child_name = models.ForeignKey(Child, on_delete=models.CASCADE)
+    child_name = models.CharField(max_length=100)
     daily_tasks = models.CharField(max_length=100)
-    important_dates = models.DateField()
+    important_dates = models.DateField(default=date.today)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 

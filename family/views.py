@@ -6,8 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse
 
-from .form import ChildForm
-from .models import Child
+from .form import ChildForm, DailyTaskForm
+from .models import Child, ChildTasks
 
 
 # Create your views here.
@@ -31,6 +31,30 @@ class FamilyCreateView(LoginRequiredMixin, CreateView):
             instance = form.save(commit=False)
             instance.user = self.request.user
             # return self.get_success_url()
+        return super().form_valid(form)
+
+
+class DailyTaskCreateView(LoginRequiredMixin, CreateView):
+    """
+    Creates new daily tasks for child
+    """
+
+    model = ChildTasks
+    form_class = DailyTaskForm
+    message = 'You have successfully created a daily task.'
+
+    def get_success_url(self):
+        messages.success(self.request, self.message)
+        return reverse('family:family')
+
+    def form_valid(self, form):
+        if form.is_valid():
+            # gets child name from an url path
+            child_name = self.request.path.split('/')[3]
+
+            instance = form.save(commit=False)
+            instance.user = self.request.user
+            instance.child_name = child_name
         return super().form_valid(form)
 
 
@@ -96,4 +120,4 @@ class FamilyListView(LoginRequiredMixin, FormView):
         # store data from queryset to context object
         context['queryset'] = self.get_queryset()
 
-        return {'context': context, 'form': self.form_class()}
+        return {'context': context, 'form': self.form_class(), 'daily_tasks_form': DailyTaskForm}
