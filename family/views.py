@@ -47,7 +47,7 @@ class FamilyListView(LoginRequiredMixin, FormView):
         Built in method used to fetch data from a database
         """
 
-        data = self.model.objects.all()
+        data = self.model.objects.filter(user=self.request.user).values()
 
         return data
 
@@ -58,9 +58,7 @@ class FamilyListView(LoginRequiredMixin, FormView):
 
         # context = super(FamilyListView, self).get_context_data(**kwargs)
 
-        context = {'queryset': self.get_queryset().values()}
-
-        print('queryset', self.get_queryset().count())
+        context = {'queryset': self.get_queryset()}
 
         # date_format = '%m/%d/%Y'
         #
