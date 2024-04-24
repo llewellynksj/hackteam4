@@ -41,3 +41,15 @@ class FoodTaskView(BaseTaskView):
 class LaundryTaskView(BaseTaskView):
     template_name = "laundry.html"
     category = "laundry"
+
+class KitchenTaskView(BaseTaskView):
+    template_name = "kitchen.html"
+    category = "kitchen"
+
+class BinsTaskView(BaseTaskView):
+    template_name = "bins.html"
+    category = "bins"
+
+class GeneralTaskView(BaseTaskView):
+    template_name = "general.html"
+    category = "other"
