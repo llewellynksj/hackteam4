@@ -3,7 +3,7 @@ from django import forms
 from .models import Task
 
 
-class AddMealIdeaForm(forms.ModelForm):
+class AddTaskForm(forms.ModelForm):
   class Meta:
     model = Task
     fields = (
@@ -16,3 +16,5 @@ class AddMealIdeaForm(forms.ModelForm):
     labels = {
             'description': False, 
         }
+
+

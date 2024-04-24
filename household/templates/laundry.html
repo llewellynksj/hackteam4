@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'food' %}">Food</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'laundry' %}">Laundry</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Kitchen</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Bins</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">General</a>
+    </li>
+  </ul>
+</div>
+
+<div class="mt-4">
+  <div class="d-flex flex-row m-2">
+    <div class="col-8">
+      <h4>Laundry Tasks</h4>
+      <div class="form-group">
+        <form method="POST">
+          {% csrf_token %}
+          {{ task_form.as_p }}
+          <input type="submit" value="Add" class="btn btn-secondary">
+        </form>
+      </div>
+      {% if queryset %}
+
+      <ul class="list-group mt-4">
+        {% for task in queryset %}
+        <li class="list-group-item">{{ task.description }}</li>
+        {% endfor %}
+      </ul>
+
+      {% else %}
+      <p class="mt-3">You haven't added any tasks yet...</p>
+      {% endif %}
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}

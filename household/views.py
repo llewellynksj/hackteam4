@@ -1,11 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .models import Task
-from .forms import AddMealIdeaForm
+from .forms import AddTaskForm
+
+
+def display_household(request):
+    return render(request, 'household.html', {})
 
 class BaseTaskView(View):
-    template_name = "household.html"
-    form_class = None
+    template_name = None
+    form_class = AddTaskForm
     category = None
     
     def get_queryset(self):
@@ -27,12 +31,13 @@ class BaseTaskView(View):
             task.user = request.user
             task.category = self.category
             task.save()
+            return redirect(request.path)
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class FoodTaskView(BaseTaskView):
-    form_class = AddMealIdeaForm
+    template_name = "food.html"
     category = "food"
 
 class LaundryTaskView(BaseTaskView):
-    form_class = AddLaundryTaskForm
+    template_name = "laundry.html"
     category = "laundry"
