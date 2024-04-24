@@ -35,41 +35,50 @@ class FamilyCreateView(LoginRequiredMixin, CreateView):
 
 
 class FamilyListView(LoginRequiredMixin, FormView):
+    # template to be used
     template_name = 'family/index.html'
+    # Child model
     model = Child
+    # form taken from form.py file
     form_class = ChildForm
+    # fetches current date of computer
+    current_date = datetime.now().date()
 
-    def days_old(self):
-        pass
+    def get_age(self, birth_date):
+        """
+        The Method is used not to return the age of the child in days.
+        """
+
+        # subtracts current date from birthdate and returns amount of days
+        return (self.current_date - birth_date).days
 
     def get_queryset(self):
         """
         Built in method used to fetch data from a database
         """
 
+        # fetches data from database
         data = self.model.objects.filter(user=self.request.user).values()
+        # empty list used to return only the data that I want
+        context = []
 
-        return data
+        # for loop used to iterate over data, and return only name and age
+        for d in data:
+            # dictionary literal to append to for fetching name and age from data
+            obj = {'name': d['child_name'], 'age': self.get_age(d['birth_date'])}
+            # once gathered correct data append to a context list
+            context.append(obj)
+
+        return context
 
     def get_context_data(self, **kwargs):
         """
         Built in method used to send data to template
         """
 
-        # context = super(FamilyListView, self).get_context_data(**kwargs)
+        context = super(FamilyListView, self).get_context_data(**kwargs)
 
-        context = {'queryset': self.get_queryset()}
-
-        # date_format = '%m/%d/%Y'
-        #
-        # birth_date = datetime.strptime(context['queryset'][0]['birth_date'].strftime(date_format), date_format)
-        #
-        # now = datetime.strptime(datetime.today().strftime(date_format), date_format)
-        #
-        # delta = (now - birth_date).days
-        #
-        # print('birth_date', birth_date)
-        # print('now', now)
-        # print('delta', delta)
+        # store data from queryset to context object
+        context['queryset'] = self.get_queryset()
 
         return {'context': context, 'form': self.form_class()}
