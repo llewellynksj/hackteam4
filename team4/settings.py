@@ -86,6 +86,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'team4.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -146,6 +147,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-llewellynksj-hackteam4-qebmxudpc8y.ws-eu110.gitpod.io'
+]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-llewellynksj-hackteam4-qebmxudpc8y.ws-eu110.gitpod.io'
