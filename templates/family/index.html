@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    {% for n in context.name %}
-        <h1>{{ n.title }}</h1>
-    {% endfor %}
-
     {% for query in context.queryset %}
     {% endfor %}
     <div class="tab">

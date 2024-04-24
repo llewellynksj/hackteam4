@@ -52,8 +52,6 @@ class FamilyListView(LoginRequiredMixin, FormView):
 
         context = super(FamilyListView, self).get_context_data(**kwargs)
 
-        context['name'] = ['family']
-
         context['queryset'] = self.get_queryset()
 
         print('query', context['query'])
