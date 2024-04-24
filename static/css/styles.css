@@ -4,6 +4,11 @@
 }
 
 /*Family Styles*/
+.title {
+    font-size: 5em;
+    text-align: center;
+    padding: 0.5em;
+}
 .tab_content {
     padding: 3em;
 }
