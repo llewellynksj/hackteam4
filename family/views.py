@@ -30,7 +30,6 @@ class FamilyCreateView(LoginRequiredMixin, CreateView):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = self.request.user
-            instance.save()
         return super().form_valid(form)
 
 
