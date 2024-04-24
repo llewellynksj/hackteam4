@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from .models import Task
-from .forms import AddTaskForm
+from .models import Task, Shopping
+from .forms import AddTaskForm, AddShoppingForm
 
 
 def display_household(request):
@@ -37,6 +37,24 @@ class BaseTaskView(View):
 class FoodTaskView(BaseTaskView):
     template_name = "food.html"
     category = "food"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['shopping_form'] = AddShoppingForm()
+        context['shopping_list'] = Shopping.objects.filter(user=self.request.user)
+        return context
+    
+    def post(self, request, *args, **kwargs):
+        if 'task_submit' in request.POST:
+            return super().post(request, *args, **kwargs)
+        elif 'shopping_submit' in request.POST:
+            shopping_form = AddShoppingForm(data=request.POST)
+            if shopping_form.is_valid():
+                shopping = shopping_form.save(commit=False)
+                shopping.user = request.user
+                shopping.save()
+                return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class LaundryTaskView(BaseTaskView):
     template_name = "laundry.html"

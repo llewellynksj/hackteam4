@@ -9,6 +9,7 @@ class Task(models.Model):
   TASK_AREAS = [
       ('kitchen', 'Kitchen'),
       ('food', 'Food'),
+      ('shop', 'Shop'),
       ('laundry', 'Laundry'),
       ('bins', 'Bins'),
       ('other', 'Other'),
@@ -22,3 +23,9 @@ class Task(models.Model):
     return f'User:{self.user} - {self.category} : {self.description}'
 
 
+class Shopping(models.Model):
+  user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+  item = models.TextField(blank=True)
+
+  def __str__(self):
+    return f'User:{self.user} - Shopping item: {self.item}'
