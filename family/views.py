@@ -27,9 +27,8 @@ class FamilyCreateView(LoginRequiredMixin, CreateView):
         return reverse('family:family')
 
     def form_valid(self, form):
-        if form.is_valid():
-            instance = form.save(commit=False)
-            instance.user = self.request.user
+        instance = form.save(commit=False)
+        instance.parent = self.request.parent
         return super().form_valid(form)
 
 
@@ -46,7 +45,7 @@ class FamilyListView(LoginRequiredMixin, FormView):
         Built in method used to fetch data from a database
         """
 
-        data = self.model.objects.filter(user=self.request.user).values()
+        data = self.model.objects.filter(parent=self.request.parent)
 
         return data
 
@@ -57,7 +56,9 @@ class FamilyListView(LoginRequiredMixin, FormView):
 
         context = super(FamilyListView, self).get_context_data(**kwargs)
 
-        context['queryset'] = self.get_queryset()
+        context['queryset'] = self.get_queryset().values()
+
+        # print('queryset', self.get_queryset())
 
         # date_format = '%m/%d/%Y'
         #
