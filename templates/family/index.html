@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    {% for query in context.queryset %}
-    {% endfor %}
+    <div class="tab">
+
+        {% for queryset in context.queryset %}
+
+            <button class="tablinks"
+                    onclick="openSection(event, queryset.child_name)">{{ queryset.child_name }}</button>
+        {% endfor %}
+        <button class="tablinks" onclick="openSection(event, 'Child')" id="defaultOpen">Child</button>
+
+    </div>
+
+
     <div class="tab">
         <button class="tablinks" onclick="openSection(event, 'Child')" id="defaultOpen">Child</button>
     </div>

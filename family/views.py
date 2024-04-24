@@ -54,6 +54,6 @@ class FamilyListView(LoginRequiredMixin, FormView):
 
         context['queryset'] = self.get_queryset()
 
-        print('query', context['query'])
+        print('query', context['queryset'])
 
         return {'context': context, 'form': self.form_class()}
