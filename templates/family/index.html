@@ -5,6 +5,8 @@
         <h1>{{ n.title }}</h1>
     {% endfor %}
 
+    {% for query in context.queryset %}
+    {% endfor %}
     <div class="tab">
         <button class="tablinks" onclick="openSection(event, 'Child')" id="defaultOpen">Child</button>
     </div>

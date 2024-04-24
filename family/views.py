@@ -38,11 +38,20 @@ class FamilyListView(LoginRequiredMixin, FormView):
     model = Child
     form_class = ChildForm
 
+    def get_queryset(self):
+        """
+        Built in method used to fetch data from a database
+        """
+
+        return self.model.objects.filter(user=self.request.user).values()
+
     def get_context_data(self, **kwargs):
         context = super(FamilyListView, self).get_context_data(**kwargs)
 
         context['name'] = ['family']
 
-        context['query'] = Child.objects.all()
+        context['queryset'] = self.get_queryset()
+
+        print('query', context['query'])
 
         return {'context': context, 'form': self.form_class()}
