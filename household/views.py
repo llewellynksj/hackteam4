@@ -1,27 +1,37 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Task
 from .forms import AddMealIdeaForm
 
+class TaskView(View):
 
-class TaskList(generic.ListView):
-    model = Task
-    template_name = "household.html"
-    context_object_name = "task_list" 
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = AddMealIdeaForm()
-        context['task_list'] = Task.objects.filter(category="food")
-        return context
-
+    def get(self, request, *args, **kwargs):
+        queryset = Task.objects.filter(category="food")
+        return render(
+            request,
+            "household.html",
+            {
+                "queryset": queryset,
+                "add_meal_idea_form": AddMealIdeaForm(),
+            },
+        )
+    
     def post(self, request, *args, **kwargs):
-        form = AddMealIdeaForm(request.POST)
-        if form.is_valid():
-            task = form.save(commit=False)
+        queryset = Task.objects.filter(category="food")
+        add_meal_idea_form = AddMealIdeaForm(data=request.POST)
+        if add_meal_idea_form.is_valid():
+            task = add_meal_idea_form.save(commit=False)
+            task.user = request.user
             task.category = "food"
-            task.user = request.user  
             task.save()
-            return redirect('household')
         else:
-            return self.render_to_response(self.get_context_data(form=form))
+            add_meal_idea_form = AddMealIdeaForm()
+            
+        return render(
+            request,
+            "household.html",
+            {
+                "queryset": queryset,
+                "add_meal_idea_form": add_meal_idea_form,
+            },
+        )

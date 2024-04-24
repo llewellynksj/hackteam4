@@ -8,10 +8,8 @@ class AddMealIdeaForm(forms.ModelForm):
     model = Task
     fields = (
       'description',
-      'category',
     )
     widgets = {
       'description': forms.TextInput(
         attrs={'class': 'form-control'}),
-      'category': forms.HiddenInput(),
     }
