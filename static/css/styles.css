@@ -3,6 +3,11 @@
     min-height: 80px;
 }
 
+/*Family Styles*/
+.tab_content {
+    padding: 3em;
+}
+
 /* Household Styles */
 /* Style the tab */
 .tab {
