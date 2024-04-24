@@ -51,49 +51,4 @@
         </div>
     {% endif %}
 
-    {#    <nav>#}
-    {#        <div class="nav nav-tabs" id="nav-tab" role="tablist">#}
-    {#            {% if not context.queryset %}#}
-    {#                {% for query in context.queryset %}#}
-    {#                    {% if forloop.first %}#}
-    {#                        <button class="nav-link active" id="nav-{{ query.child_name }}-tab" data-bs-toggle="tab"#}
-    {#                                data-bs-target="#nav-{{ query.child_name }}"#}
-    {#                                type="button" role="tab" aria-controls="nav-{{ query.child_name }}"#}
-    {#                                aria-selected="true">{{ query.child_name }}#}
-    {#                        </button>#}
-    {#                    {% else %}#}
-    {#                        <button class="nav-link" id="nav-{{ query.child_name }}-tab" data-bs-toggle="tab"#}
-    {#                                data-bs-target="#nav-{{ query.child_name }}"#}
-    {#                                type="button" role="tab" aria-controls="nav-{{ query.child_name }}"#}
-    {#                                aria-selected="true">{{ query.child_name }}#}
-    {#                        </button>#}
-    {#                    {% endif %}#}
-    {#                {% endfor %}#}
-    {#            {% else %}#}
-    {#                <h1>Nothing to display</h1>#}
-    {#            {% endif %}#}
-    {#        </div>#}
-    {#    </nav>#}
-    {##}
-    {#    <div class="tab-content" id="nav-tabContent">#}
-    {#        {% if not context.queryset %}#}
-    {#            {% for query in context.queryset %}#}
-    {#                {% if forloop.first %}#}
-    {#                    <div class="tab-pane fade show active" id="nav-{{ query.child_name }}" role="tabpanel"#}
-    {#                         aria-labelledby="nav-{{ query.child_name }}-tab"#}
-    {#                         tabindex="0">{{ query.child_name }}#}
-    {#                    </div>#}
-    {#                {% else %}#}
-    {#                    <div class="tab-pane fade" id="nav-{{ query.child_name }}" role="tabpanel"#}
-    {#                         aria-labelledby="nav-{{ query.child_name }}-tab"#}
-    {#                         tabindex="0">{{ query.child_name }}#}
-    {#                    </div>#}
-    {#                {% endif %}#}
-    {#            {% endfor %}#}
-    {#        {% else %}#}
-    {#            <h1>Nothing to display</h1>#}
-    {#        {% endif %}#}
-    {##}
-    {#    </div>#}
-
 {% endblock %}
