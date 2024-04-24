@@ -1,15 +1,17 @@
+from django.contrib.auth.models import User
 from django.db import models
 from datetime import date
 
+
 class Child(models.Model):
-    name = models.CharField(max_length=100)
-    date_of_birth = models.DateField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    child_name = models.CharField(max_length=100)
+    birth_date = models.DateField()
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
+
+    class Meta:
+        ordering = ['child_name']
 
     def __str__(self):
-      return self.name
-    
-    def calculate_age(self):
-        today = date.today()
-        age = today.year - self.date_of_birth.year - ((today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day))
-        return age
-    
+        return f'Parent: {self.user} of {self.child_name}'

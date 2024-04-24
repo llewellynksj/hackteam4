@@ -17,8 +17,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     {# css style sheets#}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/media.css' %}" />
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+    <link rel="stylesheet" href="{% static "css/media.css" %}" />
 </head>
 
 <body>
@@ -40,7 +40,7 @@
                             <a class="nav-link" href="{% url 'household' %}">Household</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'family' %}">Family</a>
+                            <a class="nav-link" href="{% url 'family:family' %}">Family</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -65,7 +65,7 @@
         {% endblock %}
     </main>
 
-    <footer class="mt-4">
+    <footer>
         <h1>This is the footer</h1>
     </footer>
 

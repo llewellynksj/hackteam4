@@ -1,6 +1,10 @@
 from django.urls import path
-from . import views
+
+from .views import FamilyListView, FamilyCreateView
+
+app_name = 'family'
 
 urlpatterns = [
-  path('', views.display_family, name='family'),
+    path('', FamilyListView.as_view(), name='family'),
+    path('create/', FamilyCreateView.as_view(), name='family_create'),
 ]
