@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from .models import Task, Shopping
-from .forms import AddTaskForm, AddShoppingForm
+from .models import Task, Shopping, Bin, Bins
+from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm
 
 
 def display_household(request):
@@ -67,6 +67,37 @@ class KitchenTaskView(BaseTaskView):
 class BinsTaskView(BaseTaskView):
     template_name = "bins.html"
     category = "bins"
+
+    def get_queryset(self):
+        # Filter bins by the current user
+        return Bins.objects.filter(user=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['bins_form'] = AddBinDetailsForm()
+        # Pass the queryset of bins to the template context
+        context['queryset'] = self.get_queryset()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        bins_form = AddBinDetailsForm(data=request.POST)
+        if bins_form.is_valid():
+            bins_data = bins_form.cleaned_data
+            bins_data['user'] = request.user
+            existing_bin_details = Bins.objects.filter(user=request.user).first()
+            if existing_bin_details:
+                # If bin details exist, update them
+                existing_bin_details.bins_collected.set(bins_data['bins_collected'])
+                existing_bin_details.bins_next_collected.set(bins_data['bins_next_collected'])
+                existing_bin_details.next_collection_date = bins_data['next_collection_date']
+                existing_bin_details.save()
+            else:
+                # Otherwise, create a new record
+                bins = bins_form.save(commit=False)
+                bins.user = request.user
+                bins.save()
+            return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class GeneralTaskView(BaseTaskView):
     template_name = "general.html"
