@@ -6,7 +6,7 @@ from datetime import date
 class Child(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     child_name = models.CharField(max_length=100)
-    birth_date = models.DateField(auto_now=True)
+    birth_date = models.DateField()
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 

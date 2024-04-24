@@ -56,9 +56,9 @@ class FamilyListView(LoginRequiredMixin, FormView):
         Built in method used to send data to template
         """
 
-        context = super(FamilyListView, self).get_context_data(**kwargs)
+        # context = super(FamilyListView, self).get_context_data(**kwargs)
 
-        context['queryset'] = self.get_queryset().values()
+        context = {'queryset': self.get_queryset().values()}
 
         print('queryset', self.get_queryset().count())
 
