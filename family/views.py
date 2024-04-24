@@ -49,8 +49,23 @@ class FamilyListView(LoginRequiredMixin, FormView):
         The Method is used not to return the age of the child in days.
         """
 
+        # convert to correct format
+        start_date = datetime(self.current_date.year, self.current_date.month, self.current_date.day)
+        end_date = datetime(birth_date.year, birth_date.month, birth_date.day)
+
+        # difference between two dates
+        delta = start_date - end_date
+
+        # Calculate years and remaining days
+        years = delta.days // 365
+        remaining_days = delta.days % 365
+
+        # Calculate months and remaining days
+        months = remaining_days // 30
+        remaining_days %= 30
+
         # subtracts current date from birthdate and returns amount of days
-        return (self.current_date - birth_date).days
+        return years, months, remaining_days
 
     def get_queryset(self):
         """
