@@ -1,37 +1,38 @@
-from django.shortcuts import render, get_object_or_404
-from django.views import generic, View
+from django.shortcuts import render
+from django.views import View
 from .models import Task
 from .forms import AddMealIdeaForm
 
-class TaskView(View):
-
+class BaseTaskView(View):
+    template_name = "household.html"
+    form_class = None
+    category = None
+    
+    def get_queryset(self):
+        return Task.objects.filter(category=self.category)
+    
+    def get_context_data(self, **kwargs):
+        context = {}
+        context['queryset'] = self.get_queryset()
+        context['task_form'] = self.form_class()
+        return context
+    
     def get(self, request, *args, **kwargs):
-        queryset = Task.objects.filter(category="food")
-        return render(
-            request,
-            "household.html",
-            {
-                "queryset": queryset,
-                "add_meal_idea_form": AddMealIdeaForm(),
-            },
-        )
+        return render(request, self.template_name, self.get_context_data(**kwargs))
     
     def post(self, request, *args, **kwargs):
-        queryset = Task.objects.filter(category="food")
-        add_meal_idea_form = AddMealIdeaForm(data=request.POST)
-        if add_meal_idea_form.is_valid():
-            task = add_meal_idea_form.save(commit=False)
+        task_form = self.form_class(data=request.POST)
+        if task_form.is_valid():
+            task = task_form.save(commit=False)
             task.user = request.user
-            task.category = "food"
+            task.category = self.category
             task.save()
-        else:
-            add_meal_idea_form = AddMealIdeaForm()
-            
-        return render(
-            request,
-            "household.html",
-            {
-                "queryset": queryset,
-                "add_meal_idea_form": add_meal_idea_form,
-            },
-        )
+        return render(request, self.template_name, self.get_context_data(**kwargs))
+
+class FoodTaskView(BaseTaskView):
+    form_class = AddMealIdeaForm
+    category = "food"
+
+class LaundryTaskView(BaseTaskView):
+    form_class = AddLaundryTaskForm
+    category = "laundry"

@@ -13,3 +13,6 @@ class AddMealIdeaForm(forms.ModelForm):
       'description': forms.TextInput(
         attrs={'class': 'form-control'}),
     }
+    labels = {
+            'description': False, 
+        }
