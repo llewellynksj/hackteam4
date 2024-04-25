@@ -8,4 +8,5 @@ urlpatterns = [
   path('kitchen/', views.KitchenTaskView.as_view(), name='kitchen'),
   path('bins/', views.BinsTaskView.as_view(), name='bins'),
   path('general/', views.GeneralTaskView.as_view(), name='general'),
+  path('delete_task/<int:pk>/', views.DeleteTask.as_view(), name='delete_task'),
 ]

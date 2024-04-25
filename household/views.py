@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views import View
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views import View, generic
 from django.urls import reverse_lazy
 from .models import Task, Shopping, Bin, Bins
 from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm
@@ -104,3 +103,16 @@ class BinsTaskView(BaseTaskView):
 class GeneralTaskView(BaseTaskView):
     template_name = "general.html"
     category = "other"
+
+
+# Edit and Delete Views
+class DeleteTask(generic.DeleteView):
+    model = Task
+    template_name = 'delete_task.html'
+    success_url = reverse_lazy('food')
+
+class EditTask(generic.UpdateView):
+    model = Task
+    form_class = AddTaskForm
+    template_name = edit_task.html
+    success_url = reverse_lazy('food')
