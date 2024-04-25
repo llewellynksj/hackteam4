@@ -38,11 +38,14 @@
           <input type="submit" name="task_submit" value="Add" class="btn btn-secondary mb-4">
         </form>
       </div>
-      {% if queryset %}
 
+      {% if queryset %}
       <ul class="list-group m-4">
         {% for task in queryset %}
-        <li class="list-group-item">{{ task.description }}</li>
+        <li class="list-group-item">{{ task.description }}
+          <button type="button" class="btn btn-primary update-task-btn">Update</button>
+          <button type="button" class="btn btn-danger delete-task-btn">Delete</button>
+        </li>
         {% endfor %}
       </ul>
 
@@ -80,6 +83,7 @@
     </div>
   </div>
 </div>
+
 
 {% endif %}
 {% endblock %}

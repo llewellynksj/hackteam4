@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
 from .models import Task, Shopping, Bin, Bins
 from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm
 

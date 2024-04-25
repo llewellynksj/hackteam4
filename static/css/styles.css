@@ -64,3 +64,31 @@ https://codepen.io/isabelc/pen/MmrJgx */
     color: #F35D17;
     font-size: 30px;
 }
+
+/* Modal */
+.modal-container {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F35D17;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 10px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 225px;
+    height: 135px;
+}
