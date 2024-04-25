@@ -48,9 +48,9 @@ class TabsForm(forms.ModelForm):
 
     class Meta:
         model = Tabs
-        fields = ['tabs']
+        fields = ['tab_name']
 
     def __init__(self, *args, **kwargs):
         super(TabsForm, self).__init__(*args, **kwargs)
 
-        self.fields['tabs'].required = True
+        self.fields['tab_name'].required = True
