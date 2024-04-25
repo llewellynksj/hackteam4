@@ -30,3 +30,19 @@ class ChildTasks(models.Model):
 
     def __str__(self):
         return f'Child: {self.child_name} of {self.user}'
+
+
+class Tabs(models.Model):
+    """
+    Tabs model to get track of currently working tab
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    tab_name = models.CharField(max_length=100, default="")
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
+
+    class Meta:
+        ordering = ['user']
+
+    def __str__(self):
+        return f'Tab: {self.tab_name} of {self.user}'
