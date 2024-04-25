@@ -5,8 +5,8 @@
 <!-- Meal Ideas -->
 <div class="p-4 food-container">
   <div class="d-flex flex-md-row flex-column m-2">
-    <div class="col-sm-12 col-md-7">
-      <p class="text-center">It's tough coming up with meal plans each week, so help out by adding some ideas of
+    <div class="col-sm-12 col-md-6 px-3 mw-50">
+      <p class="text-left">It's tough coming up with meal plans each week, so help out by adding some ideas of
         different, or favourite, recipes.</p>
 
       <h4>Meal Ideas</h4>
@@ -19,7 +19,7 @@
       </div>
 
       {% if queryset %}
-      <ul class="list-group m-4">
+      <ul class="list-group">
         {% for task in queryset %}
         <li class="list-group-item">
           <div class="d-flex justify-content-between">
@@ -43,8 +43,9 @@
     </div>
 
     <!-- Shopping List -->
-    <div class="col-sm-12 col-md-5 m-3">
-      <p class="text-center">Noticed we're running low of anything? Add it to the shopping list.</p>
+    <div class="col-sm-12 col-md-6 px-3 mw-50">
+      <p class="text-left">Noticed we're running low of anything?<br>
+        Add it to the shopping list.</p>
       <h4 class="mt-4">Shopping List</h4>
 
       <div class="form-group">
@@ -55,7 +56,7 @@
         </form>
       </div>
       {% if shopping_list %}
-      <ul class="list-group m-4">
+      <ul class="list-group">
         {% for item in shopping_list %}
         <li class="list-group-item">
           <div class="d-flex justify-content-between">
