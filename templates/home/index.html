@@ -1,11 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>Home Page</h1>
-    {% for n in context.name %}
+<main>
+    <section class="home-section1">         
+        <h3>
+            FairPlay - An engaging task sharing partnership tool that brings you closer together.
+        </h3> 
+        <div id="home-section1">
+            Women still shoulder a disproportionate amount of the housework: the “Invisible Load”, especially mothers, who often have even less time and emotional bandwidth to deal with this burden. FairPlay is here to help alleviate the chores, levitate above them and elevate your relationship with your partner to a new emotional level.<br>
+            <br>
+            FairPlay is designed as a “partnership tool” rather than a “management tool”. Together with your partner, you both manage and help each other tackle everyday housework as you’re working towards a common goal that you both set yourself, be it a romantic night out at your favourite local restaurant or a cosy night in, cuddled up on the sofa, watching that film you both went to see on your first date.
+            </div>
+    </section>
+    <section class="home-section2"> 
+        <div id="home-section2">
+            Share and Set Your Goals
+        </div>
+        <div class="cards">
+            <div class="card-1">
+                <h4>Get reminders to accomplish tasks.</h4>
+                <br>
+                <p class="readmore">Read more</p>
+            </div>
+            <div class="card-2">
+                <h4>Personalise tasks and names.</h4>
+                <br>
+                <p class="readmore">Read more</p>
+            </div>
+             <div class="card-3">
+                <h4>Set a common reward.</h4>
+                <br>
+                <p class="readmore">Read more</p>
+            </div>
+            <div class="card-4">
+                <h4>Set reminders for important dates.</h4>
+                <br>
+                <p class="readmore">Read more</p>
+            </div>
+        </div>
+    </section>
+    <section class="home-section3"> 
+        <div id="home-section3">
+            Visualise your goals and reap the rewards!
+        </div>
+        <div class="chart">
+            <p id="chart-goals">Our Goals</p>
+            <p id="chart-reward">Reward: Dinner at the Royal Oak</p>
+            <img id="piechart" src="./assets/images/pie-chart.png" alt="goal piechart">
+            <p id="countdown">In: 3 days 8 hours</p>
+        </div>
+    </section>
+</main>
 
-        <h1>{{ n }}</h1>
 
-    {% endfor %}
 
 {% endblock content %}
