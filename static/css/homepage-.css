@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap');
 
 *{
@@ -5,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
 font-family: "Zen Kaku Gothic Antique";
@@ -24,6 +26,7 @@ flex-shrink: 0;
 background: #B0D8EB;
 }
 
+
 .navbar-nav {
 z-index: 1;
 display: flex;
@@ -36,7 +39,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
-
+*/
 .logo {
 display: flex;
 width: 112px;
@@ -55,7 +58,7 @@ input {
 visibility: hidden;
 opacity: 0;
 }
-*/
+
 
 .navbar-nav {
 display: flex;
@@ -80,6 +83,7 @@ text-decoration: none;
 list-style-type: none;
 cursor: pointer;
 }
+*/
 
 #signup {
   display: flex;
