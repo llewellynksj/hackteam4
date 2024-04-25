@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.views import View, generic
 from django.urls import reverse_lazy
 from .models import Task, Shopping, Bin, Bins
@@ -126,9 +127,14 @@ class DeleteTask(generic.DeleteView):
     template_name = 'delete_task.html'
     success_url = reverse_lazy('food')
 
+    # def get_success_url(self, **kwargs):
+    #     q = self.kwargs.get('match')
+    #     if "submit" in self.request.POST:
+    #      url = reverse('household', args={q : 'match'})
+    #     return url
+
 
 class DeleteShoppingItem(generic.DeleteView):
     model = Shopping
     template_name = 'delete_shopping_item.html'
     success_url = reverse_lazy('food')
-
