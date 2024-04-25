@@ -1,0 +1,28 @@
+{% extends 'household_base.html' %}
+
+{% block material %}
+<div class="p-4">
+  <div class="d-flex flex-md-row flex-column m-2">
+    <div class="col-sm-12 col-md-7">
+      {% if user.id == shopping.user.id %}
+      <div class="text-left m-4">
+        <div class="form-group">
+          <form method="POST">
+            {% csrf_token %}
+            <h4 class="py-2">Are you sure you want to delete {{ shopping.item }}?</h4>
+            <button class="btn btn-danger my-3 py-2 px-3">Delete</button>
+          </form>
+          <a href="{% url 'food' %}">
+            <p class="btn btn-secondary">Back</p>
+          </a>
+        </div>
+      </div>
+      {% else %}
+    </div>
+  </div>
+  <p class="lead">You are not able to delete this as you are not the owner</p>
+</div>
+{% endif %}
+
+
+{% endblock %}
