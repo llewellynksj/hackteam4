@@ -1,7 +1,7 @@
 import datetime
 
 from django import forms
-from .models import Child, ChildTasks
+from .models import Child, ChildTasks, Tabs
 
 
 class ChildForm(forms.ModelForm):
@@ -39,3 +39,18 @@ class DailyTaskForm(forms.ModelForm):
 
         self.fields['daily_tasks'].required = True
         self.fields['daily_tasks'].label = ''
+
+
+class TabsForm(forms.ModelForm):
+    """
+    Form for creating tabs
+    """
+
+    class Meta:
+        model = Tabs
+        fields = ['tabs']
+
+    def __init__(self, *args, **kwargs):
+        super(TabsForm, self).__init__(*args, **kwargs)
+
+        self.fields['tabs'].required = True

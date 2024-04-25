@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.urls import reverse
 
 from .form import ChildForm, DailyTaskForm
-from .models import Child, ChildTasks
+from .models import Child, ChildTasks, Tabs
 
 
 # Create your views here.
@@ -58,6 +58,11 @@ class DailyTaskCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+class TabsCreateView(LoginRequiredMixin, CreateView):
+    model = Tabs
+
+
+# read
 class FamilyListView(LoginRequiredMixin, FormView):
     # template to be used
     template_name = 'family/index.html'
@@ -99,6 +104,9 @@ class FamilyListView(LoginRequiredMixin, FormView):
         # fetches children from db based on logged-in username
         data = self.model.objects.filter(user=self.request.user).values()
         tasks = ChildTasks.objects.filter(user=self.request.user, ).values()
+        tabs = Tabs.objects.filter(user=self.request.user).values()
+
+        print('tabs', tabs)
 
         # empty list used to return only the data that I want
         context = []
