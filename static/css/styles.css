@@ -3,6 +3,16 @@
     min-height: 80px;
 }
 
+/* Household */
+.food-container {
+    /* background-color: ; */
+    --bs-nav-tabs-link-active-bg: none;
+}
+
+/* .nav-tabs {
+    bs-nav-tabs-link-active-bg: none;
+} */
+
 /* Page divider */
 /* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon': 
 https://codepen.io/isabelc/pen/MmrJgx */
@@ -25,19 +35,19 @@ https://codepen.io/isabelc/pen/MmrJgx */
     width: 100%;
     height: 25px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #F8A37B;
+    box-shadow: 0 0 10px #F35D17;
 }
 
 .divider span {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     position: absolute;
     bottom: 100%;
     margin-bottom: -25px;
     left: 50%;
     margin-left: -25px;
     border-radius: 100%;
-    box-shadow: 0 2px 4px #F8A37B;
+    box-shadow: 0 2px 4px #F35D17;
     background: #fff;
 }
 
@@ -48,9 +58,9 @@ https://codepen.io/isabelc/pen/MmrJgx */
     left: 4px;
     right: 4px;
     border-radius: 100%;
-    border: 1px dashed #F8A37B;
+    border: 1px dashed #F35D17;
     text-align: center;
     line-height: 40px;
-    color: #F8A37B;
+    color: #F35D17;
     font-size: 30px;
 }
