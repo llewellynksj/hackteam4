@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.views import View, generic
 from django.urls import reverse_lazy
@@ -42,8 +43,8 @@ class FoodTaskView(BaseTaskView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['shopping_form'] = AddShoppingForm()
         context['shopping_list'] = Shopping.objects.filter(user=self.request.user)
+        context['active_tab'] = 'food' 
         return context
     
     def post(self, request, *args, **kwargs):
@@ -64,8 +65,10 @@ class LaundryTaskView(BaseTaskView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['todo_form'] = AddToDoForm() 
+        context['todo_form'] = AddToDoForm()
+        context['active_tab'] = 'laundry'  
         return context
+
 
     def post(self, request, *args, **kwargs):
         todo_form = AddToDoForm(data=request.POST)
@@ -81,6 +84,22 @@ class KitchenTaskView(BaseTaskView):
     template_name = "kitchen.html"
     category = "kitchen"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_form'] = AddToDoForm()
+        context['active_tab'] = 'kitchen' 
+        return context
+    
+    def post(self, request, *args, **kwargs):
+        todo_form = AddToDoForm(data=request.POST)
+        if todo_form.is_valid():
+            todo = todo_form.save(commit=False)
+            todo.user = request.user
+            todo.category = self.category
+            todo.save()
+            return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
+
 class BinsTaskView(BaseTaskView):
     template_name = "bins.html"
     category = "bins"
@@ -94,6 +113,7 @@ class BinsTaskView(BaseTaskView):
         context['bins_form'] = AddBinDetailsForm()
         # Pass the queryset of bins to the template context
         context['queryset'] = self.get_queryset()
+        context['active_tab'] = 'bins' 
         return context
 
     def post(self, request, *args, **kwargs):
@@ -120,18 +140,27 @@ class GeneralTaskView(BaseTaskView):
     template_name = "general.html"
     category = "other"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_form'] = AddToDoForm()
+        context['active_tab'] = 'general' 
+        return context
+
+    def post(self, request, *args, **kwargs):
+        todo_form = AddToDoForm(data=request.POST)
+        if todo_form.is_valid():
+            todo = todo_form.save(commit=False)
+            todo.user = request.user
+            todo.category = self.category
+            todo.save()
+            return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
 
 # Edit and Delete Views
 class DeleteTask(generic.DeleteView):
     model = Task
     template_name = 'delete_task.html'
     success_url = reverse_lazy('food')
-
-    # def get_success_url(self, **kwargs):
-    #     q = self.kwargs.get('match')
-    #     if "submit" in self.request.POST:
-    #      url = reverse('household', args={q : 'match'})
-    #     return url
 
 
 class DeleteShoppingItem(generic.DeleteView):

@@ -11,7 +11,7 @@
       <div class="form-group">
         <form method="POST">
           {% csrf_token %}
-          {{ task_form.as_p }}
+          {{ todo_form.as_p }}
           <input type="submit" name="task_submit" value="Add" class="btn btn-secondary mb-4">
         </form>
       </div>
