@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse
 
-from .form import ChildForm, DailyTaskForm
+from .form import ChildForm, DailyTaskForm, TabsForm
 from .models import Child, ChildTasks, Tabs
 
 
@@ -59,7 +59,18 @@ class DailyTaskCreateView(LoginRequiredMixin, CreateView):
 
 
 class TabsCreateView(LoginRequiredMixin, CreateView):
+    """
+    Creates new tabs for child
+    """
+
     model = Tabs
+    form_class = TabsForm
+
+    def form_valid(self, form):
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = self.request.user
+        return super().form_valid(form)
 
 
 # read
