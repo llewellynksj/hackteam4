@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.contrib import messages
 from django.shortcuts import render
-from django.views.generic import ListView, FormView, CreateView
+from django.views.generic import ListView, FormView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -125,3 +125,14 @@ class FamilyListView(LoginRequiredMixin, FormView):
         context['queryset'] = self.get_queryset()
 
         return {'context': context, 'form': self.form_class(), 'daily_tasks_form': DailyTaskForm}
+
+
+class DailyTaskDeleteView(LoginRequiredMixin, DeleteView):
+    model = ChildTasks
+    template_name = 'family/index.html'
+    success_message = 'You have successfully deleted a daily task.'
+    success_url = "/family"
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)

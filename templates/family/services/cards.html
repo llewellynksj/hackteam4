@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
@@ -10,9 +12,19 @@
                         {{ daily_tasks_form.as_p }}
                         <button type="submit" class=" btn btn-primary">Add</button>
                     </form>
-                    {% for task in query.tasks %}
-                        <p class="card-text">{{ task.daily_tasks }}</p>
-                    {% endfor %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            {% for task in query.tasks %}
+                                <form id="{{ task.id }}" method="post"
+                                      action="{% url 'family:daily_task_delete' pk=task.id %}">
+                                    {% csrf_token %}
+                                    <input type="text" class="form-control" value="{{ task.daily_tasks }}"
+                                           aria-label="Text input with checkbox">
+                                    <button type="submit" class="btn btn-success">Delete</button>
+                                </form>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <small class="text-body-secondary">Last updated 3 mains ago</small>
