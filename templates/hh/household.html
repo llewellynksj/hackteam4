@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
 
 <div class="container-fluid">
   <h1>Household</h1>
@@ -25,5 +26,11 @@
   </ul>
 
 </div>
+
+{% else %}
+You are not able to do this. Please <a href="{% url 'account_login' %}">Login</a>
+
+
+{% endif %}
 
 {% endblock %}

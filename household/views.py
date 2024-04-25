@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.views import View, generic
 from django.urls import reverse_lazy
 from .models import Task, Shopping, Bin, Bins
-from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm
+from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm, AddToDoForm
 
 
 def display_household(request):
-    return render(request, 'household.html', {})
+    return render(request, 'hh/household.html', {})
 
 class BaseTaskView(View):
     template_name = None
@@ -36,13 +38,14 @@ class BaseTaskView(View):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class FoodTaskView(BaseTaskView):
-    template_name = "food.html"
+    template_name = "hh/food.html"
     category = "food"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['shopping_form'] = AddShoppingForm()
         context['shopping_list'] = Shopping.objects.filter(user=self.request.user)
+        context['active_tab'] = 'food' 
         return context
     
     def post(self, request, *args, **kwargs):
@@ -58,15 +61,48 @@ class FoodTaskView(BaseTaskView):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class LaundryTaskView(BaseTaskView):
-    template_name = "laundry.html"
+    template_name = "hh/laundry.html"
     category = "laundry"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_form'] = AddToDoForm()
+        context['active_tab'] = 'laundry'  
+        return context
+
+
+    def post(self, request, *args, **kwargs):
+        todo_form = AddToDoForm(data=request.POST)
+        if todo_form.is_valid():
+            todo = todo_form.save(commit=False)
+            todo.user = request.user
+            todo.category = self.category
+            todo.save()
+            return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
+
 class KitchenTaskView(BaseTaskView):
-    template_name = "kitchen.html"
+    template_name = "hh/kitchen.html"
     category = "kitchen"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_form'] = AddToDoForm()
+        context['active_tab'] = 'kitchen' 
+        return context
+    
+    def post(self, request, *args, **kwargs):
+        todo_form = AddToDoForm(data=request.POST)
+        if todo_form.is_valid():
+            todo = todo_form.save(commit=False)
+            todo.user = request.user
+            todo.category = self.category
+            todo.save()
+            return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
+
 class BinsTaskView(BaseTaskView):
-    template_name = "bins.html"
+    template_name = "hh/bins.html"
     category = "bins"
 
     def get_queryset(self):
@@ -78,6 +114,7 @@ class BinsTaskView(BaseTaskView):
         context['bins_form'] = AddBinDetailsForm()
         # Pass the queryset of bins to the template context
         context['queryset'] = self.get_queryset()
+        context['active_tab'] = 'bins' 
         return context
 
     def post(self, request, *args, **kwargs):
@@ -101,24 +138,50 @@ class BinsTaskView(BaseTaskView):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class GeneralTaskView(BaseTaskView):
-    template_name = "general.html"
+    template_name = "hh/general.html"
     category = "other"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_form'] = AddToDoForm()
+        context['active_tab'] = 'general' 
+        return context
+
+    def post(self, request, *args, **kwargs):
+        todo_form = AddToDoForm(data=request.POST)
+        if todo_form.is_valid():
+            todo = todo_form.save(commit=False)
+            todo.user = request.user
+            todo.category = self.category
+            todo.save()
+            return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
 
 # Edit and Delete Views
 class DeleteTask(generic.DeleteView):
     model = Task
-    template_name = 'delete_task.html'
-    success_url = reverse_lazy('food')
+    template_name = 'hh/delete_task.html'
+    success_url = reverse_lazy('household')  # Default URL, change as needed
+
+    def delete(self, request, *args, **kwargs):
+        previous_url = request.POST.get('previous_url')
+
+        self.object = self.get_object()
+        self.object.delete()
+
+        if previous_url:
+            return HttpResponseRedirect(previous_url)
+        else:
+            return HttpResponseRedirect(self.success_url)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        previous_url = self.request.META.get('HTTP_REFERER', '/')
+        context['previous_url'] = previous_url
+        return context
 
 
 class DeleteShoppingItem(generic.DeleteView):
     model = Shopping
-    template_name = 'delete_shopping_item.html'
+    template_name = 'hh/delete_shopping_item.html'
     success_url = reverse_lazy('food')
-
-# class EditTask(generic.UpdateView):
-#     model = Task
-#     form_class = AddTaskForm
-#     template_name = 'edit_task.html'
-#     success_url = reverse_lazy('food')

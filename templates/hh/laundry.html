@@ -6,20 +6,27 @@
   <div class="d-flex flex-md-row flex-column m-2">
     <div class="col-sm-12 col-md-7">
       <p class="text-center"></p>
-
       <h4>Laundry Tasks</h4>
+
       <div class="form-group">
         <form method="POST">
           {% csrf_token %}
-          {{ task_form.as_p }}
-          <input type="submit" name="task_submit" value="Add" class="btn btn-secondary mb-4">
+          {{ todo_form.as_p }}
+          <input type="submit" name="todo_submit" value="Add" class="btn btn-secondary mb-4">
         </form>
       </div>
-      {% if queryset %}
 
-      <ul class="list-group m-4">
+      {% if queryset %}
+      <ul class="list-group">
         {% for task in queryset %}
-        <li class="list-group-item">{{ task.description }}</li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <span> {{task.description }}</span>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_task' task.pk %}">Delete</a>
+            </div>
+          </div>
+        </li>
         {% endfor %}
       </ul>
 

@@ -18,6 +18,9 @@ class Task(models.Model):
 
   user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
   description = models.TextField(blank=True)
+  priority = models.BooleanField(default=False)
+  due_date = models.DateField(default=date.today)
+  completed = models.BooleanField(default=False)
   category = models.CharField(max_length=20, choices=TASK_AREAS, default='other')
 
   def __str__(self):
@@ -64,3 +67,5 @@ class Bin(models.Model):
         bin_names = ['General Waste', 'Recycling', 'Food Bin', 'Garden Waste']
         for name in bin_names:
             cls.objects.get_or_create(name=name)
+
+
