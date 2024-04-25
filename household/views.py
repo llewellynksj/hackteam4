@@ -160,11 +160,28 @@ class GeneralTaskView(BaseTaskView):
 # Edit and Delete Views
 class DeleteTask(generic.DeleteView):
     model = Task
-    template_name = 'delete_task.html'
-    success_url = reverse_lazy('food')
+    template_name = 'hh/delete_task.html'
+    success_url = reverse_lazy('household')  # Default URL, change as needed
+
+    def delete(self, request, *args, **kwargs):
+        previous_url = request.POST.get('previous_url')
+
+        self.object = self.get_object()
+        self.object.delete()
+
+        if previous_url:
+            return HttpResponseRedirect(previous_url)
+        else:
+            return HttpResponseRedirect(self.success_url)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        previous_url = self.request.META.get('HTTP_REFERER', '/')
+        context['previous_url'] = previous_url
+        return context
 
 
 class DeleteShoppingItem(generic.DeleteView):
     model = Shopping
-    template_name = 'delete_shopping_item.html'
+    template_name = 'hh/delete_shopping_item.html'
     success_url = reverse_lazy('food')
