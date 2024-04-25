@@ -1,0 +1,65 @@
+{% load static %}
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Daily Tasks</h5>
+                    <form method="post"
+                          action="{% url 'family:daily_task_create' child_name=query.name %}">
+                        {% csrf_token %}
+                        {{ daily_tasks_form.as_p }}
+                        <button type="submit" class=" btn btn-primary">Add</button>
+                    </form>
+                    {#form for deleting daily tasks when clicked#}
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            {% for task in query.tasks %}
+                                <form method="post" action="{% url 'family:daily_task_delete' pk=task.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit">{{ task.daily_tasks }}</button>
+                                </form>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mains ago</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Development</h5>
+                    <p class="card-text">This card has the supporting text below as a natural lead-in to
+                        additional
+                        content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mains ago</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Important Dates</h5>
+                    <p class="card-text">This is a wider card with the supporting text below as a
+                        natural
+                        lead-in to
+                        additional content.
+                        This card has even longer content than the first to show that equal
+                        height
+                        action.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mains ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

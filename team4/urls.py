@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .settings import LOCALhOST
 
 urlpatterns = [
     path('', include('home.urls')),
@@ -23,4 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('household/', include('household.urls')),
     path('family/', include('family.urls')),
+    path('team/', include("team.urls")),
 ]
+
+if LOCALhOST == 'True':
+    urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))
