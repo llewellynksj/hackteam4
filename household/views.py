@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View, generic
 from django.urls import reverse_lazy
 from .models import Task, Shopping, Bin, Bins
-from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm
+from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm, AddToDoForm
 
 
 def display_household(request):
@@ -61,6 +61,21 @@ class LaundryTaskView(BaseTaskView):
     template_name = "laundry.html"
     category = "laundry"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_form'] = AddToDoForm() 
+        return context
+
+    def post(self, request, *args, **kwargs):
+        todo_form = AddToDoForm(data=request.POST)
+        if todo_form.is_valid():
+            todo = todo_form.save(commit=False)
+            todo.user = request.user
+            todo.category = self.category
+            todo.save()
+            return redirect(request.path)
+        return render(request, self.template_name, self.get_context_data(**kwargs))
+
 class KitchenTaskView(BaseTaskView):
     template_name = "kitchen.html"
     category = "kitchen"
@@ -117,8 +132,3 @@ class DeleteShoppingItem(generic.DeleteView):
     template_name = 'delete_shopping_item.html'
     success_url = reverse_lazy('food')
 
-# class EditTask(generic.UpdateView):
-#     model = Task
-#     form_class = AddTaskForm
-#     template_name = 'edit_task.html'
-#     success_url = reverse_lazy('food')

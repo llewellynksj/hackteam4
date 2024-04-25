@@ -6,23 +6,23 @@
   <div class="d-flex flex-md-row flex-column m-2">
     <div class="col-sm-12 col-md-7">
       <p class="text-center"></p>
-
       <h4>Laundry Tasks</h4>
+
+      <!-- Render AddToDoForm -->
       <div class="form-group">
         <form method="POST">
           {% csrf_token %}
-          {{ task_form.as_p }}
-          <input type="submit" name="task_submit" value="Add" class="btn btn-secondary mb-4">
+          {{ todo_form.as_p }}
+          <input type="submit" name="todo_submit" value="Add" class="btn btn-secondary mb-4">
         </form>
       </div>
-      {% if queryset %}
 
+      {% if queryset %}
       <ul class="list-group m-4">
         {% for task in queryset %}
         <li class="list-group-item">{{ task.description }}</li>
         {% endfor %}
       </ul>
-
       {% else %}
       <p class="mt-3">You haven't added any tasks yet...</p>
       {% endif %}
