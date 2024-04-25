@@ -24,7 +24,9 @@
         <li class="list-group-item">
           <div class="d-flex justify-content-between">
             <span> {{task.description }}</span>
-            <a class="" href="{% url 'delete_task' task.pk %}">Delete</a>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_task' task.pk %}">Delete</a>
+            </div>
           </div>
         </li>
         {% endfor %}
@@ -55,7 +57,14 @@
       {% if shopping_list %}
       <ul class="list-group m-4">
         {% for item in shopping_list %}
-        <li class="list-group-item">{{ item.item }}</li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <span> {{item.item }}</span>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_shopping_item' item.pk %}">Remove</a>
+            </div>
+          </div>
+        </li>
         {% endfor %}
       </ul>
       {% else %}

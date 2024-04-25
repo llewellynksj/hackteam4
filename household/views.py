@@ -111,8 +111,14 @@ class DeleteTask(generic.DeleteView):
     template_name = 'delete_task.html'
     success_url = reverse_lazy('food')
 
-class EditTask(generic.UpdateView):
-    model = Task
-    form_class = AddTaskForm
-    template_name = edit_task.html
+
+class DeleteShoppingItem(generic.DeleteView):
+    model = Shopping
+    template_name = 'delete_shopping_item.html'
     success_url = reverse_lazy('food')
+
+# class EditTask(generic.UpdateView):
+#     model = Task
+#     form_class = AddTaskForm
+#     template_name = 'edit_task.html'
+#     success_url = reverse_lazy('food')
