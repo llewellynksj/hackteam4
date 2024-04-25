@@ -50,12 +50,14 @@ font-weight: 700;
 line-height: normal;
 }
 
+/*
 input {
 visibility: hidden;
 opacity: 0;
 }
+*/
 
-ul {
+.navbar-nav {
 display: flex;
 width: 1122px;
 justify-content: flex-end;
@@ -63,12 +65,12 @@ align-items: flex-start;
 gap: 30px;
 }
 
-li {
+.nav-item {
 list-style-type: none;
 overflow: hidden;
 }
 
-li a {
+.nav-link {
 color: #FFF;
 font-size: 20px;
 font-style: normal;
@@ -112,7 +114,7 @@ flex-shrink: 0;
 background: linear-gradient(180deg, rgba(176, 216, 235, 0.70) 0%, #BDDAC2 24.5%, #EED5A5 43%, #EECA87 62.5%, rgba(248, 163, 123, 0.90) 82.5%, #FB8800 100%);
 }
 
-h3 {
+#section-h3 {
 color: #ffffff;
 text-align: center;
 font-family: "Zen Kaku Gothic Antique";
@@ -136,7 +138,6 @@ padding: 20px 395px 800px;
 
 /* HOME page - Section 2 */
 
-
 .home-section2 {
 display: inline-flex;
 flex-direction: column;
@@ -155,7 +156,7 @@ font-weight: 700;
 line-height: normal;
 }
 
-h4 {
+#card-h4 {
 width: 231px;
 color: #3D3D3D;
 font-family: "Zen Kaku Gothic Antique";
@@ -287,6 +288,7 @@ font-style: normal;
 font-weight: 700;
 line-height: 52px;
 }
+
 /* HOME page - Footer */
 
 footer {
