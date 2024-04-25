@@ -1,0 +1,23 @@
+<h1>Douglas</h1>
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        {% for query in context.queryset %}
+            {% if forloop.first %}
+                <form method="post">
+                    <button class="nav-link active" id="nav-{{ query.name }}-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-{{ query.name }}"
+                            type="button" role="tab" aria-controls="nav-{{ query.name }}"
+                            aria-selected="true">{{ query.name }}
+                    </button>
+                </form>
+            {% else %}
+                <button class="nav-link" id="nav-{{ query.name }}-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-{{ query.name }}"
+                        type="button" role="tab" aria-controls="nav-{{ query.name }}"
+                        aria-selected="true">{{ query.name }}
+                </button>
+            {% endif %}
+        {% endfor %}
+    </div>
+</nav>

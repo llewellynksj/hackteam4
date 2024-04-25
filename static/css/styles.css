@@ -3,92 +3,110 @@
     min-height: 80px;
 }
 
-/* Household */
-.food-container {
-    /* background-color: ; */
-    --bs-nav-tabs-link-active-bg: none;
-}
-
-/* .nav-tabs {
-    bs-nav-tabs-link-active-bg: none;
-} */
-
-/* Page divider */
-/* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon': 
-https://codepen.io/isabelc/pen/MmrJgx */
-.divider {
-    margin: 40px auto;
-    width: 700px;
-    max-width: 100%;
-    position: relative;
-}
-
-.divider-inner {
-    overflow: hidden;
-    height: 20px;
-}
-
-.divider-inner:after {
-    content: '';
-    display: block;
-    margin: -25px auto 0;
-    width: 100%;
-    height: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #F35D17;
-}
-
-.divider span {
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    bottom: 100%;
-    margin-bottom: -25px;
-    left: 50%;
-    margin-left: -25px;
-    border-radius: 100%;
-    box-shadow: 0 2px 4px #F35D17;
-    background: #fff;
-}
-
-.divider i {
-    position: absolute;
-    top: 4px;
-    bottom: 4px;
-    left: 4px;
-    right: 4px;
-    border-radius: 100%;
-    border: 1px dashed #F35D17;
+/*Family Styles*/
+.title {
+    font-size: 5em;
     text-align: center;
-    line-height: 40px;
-    color: #F35D17;
-    font-size: 30px;
+    padding: 0.5em;
 }
 
-/* Modal */
-.modal-container {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+.tab_content {
+    padding: 3em;
 }
 
-.modal-container div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #F35D17;
-    margin: 0 auto;
-    padding: 15px;
-    border-radius: 10px;
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    min-width: 225px;
-    height: 135px;
+/* Household Styles */
+/* Style the tab */
+.tab {
+    /* Household */
+
+    .food-container {
+        /* background-color: ; */
+        --bs-nav-tabs-link-active-bg: none;
+    }
+
+    /* .nav-tabs {
+        bs-nav-tabs-link-active-bg: none;
+    } */
+
+    /* Page divider */
+    /* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon':
+    https://codepen.io/isabelc/pen/MmrJgx */
+
+    .divider {
+        margin: 40px auto;
+        width: 700px;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .divider-inner {
+        overflow: hidden;
+        height: 20px;
+    }
+
+    .divider-inner:after {
+        content: '';
+        display: block;
+        margin: -25px auto 0;
+        width: 100%;
+        height: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #F35D17;
+    }
+
+    .divider span {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        bottom: 100%;
+        margin-bottom: -25px;
+        left: 50%;
+        margin-left: -25px;
+        border-radius: 100%;
+        box-shadow: 0 2px 4px #F35D17;
+        background: #fff;
+    }
+
+    .divider i {
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        left: 4px;
+        right: 4px;
+        border-radius: 100%;
+        border: 1px dashed #F35D17;
+        text-align: center;
+        line-height: 40px;
+        color: #F35D17;
+        font-size: 30px;
+    }
+
+    /* Modal */
+
+    .modal-container {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-container div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F35D17;
+        margin: 0 auto;
+        padding: 15px;
+        border-radius: 10px;
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        min-width: 225px;
+        height: 135px;
+    }
 }

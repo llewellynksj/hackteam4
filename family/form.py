@@ -1,7 +1,7 @@
 import datetime
 
 from django import forms
-from .models import Child
+from .models import Child, ChildTasks, Tabs
 
 
 class ChildForm(forms.ModelForm):
@@ -23,3 +23,34 @@ class ChildForm(forms.ModelForm):
         self.fields['birth_date'].widget.attrs['class'] = 'datepicker'
         self.fields['birth_date'].widget.attrs['max'] = datetime.date.today().strftime(
             '%Y-%m-%d')
+
+
+class DailyTaskForm(forms.ModelForm):
+    """
+    Form for creating daily tasks
+    """
+
+    class Meta:
+        model = ChildTasks
+        fields = ['daily_tasks']
+
+    def __init__(self, *args, **kwargs):
+        super(DailyTaskForm, self).__init__(*args, **kwargs)
+
+        self.fields['daily_tasks'].required = True
+        self.fields['daily_tasks'].label = ''
+
+
+class TabsForm(forms.ModelForm):
+    """
+    Form for creating tabs
+    """
+
+    class Meta:
+        model = Tabs
+        fields = ['tab_name']
+
+    def __init__(self, *args, **kwargs):
+        super(TabsForm, self).__init__(*args, **kwargs)
+
+        self.fields['tab_name'].required = True
