@@ -66,7 +66,12 @@ class TabsCreateView(LoginRequiredMixin, CreateView):
     model = Tabs
     form_class = TabsForm
 
+    def form_invalid(self, form):
+        print('form is not valid')
+        return reverse('family:family')
+
     def form_valid(self, form):
+        print('form is valid')
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = self.request.user
