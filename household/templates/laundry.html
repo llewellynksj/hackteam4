@@ -1,27 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'household_base.html' %}
 
-{% block content %}
-{% if user.is_authenticated %}
-
-<div class="mt-3">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'food' %}">Food</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'laundry' %}">Laundry</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'kitchen' %}">Kitchen</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'bins' %}">Bins</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'general' %}">General</a>
-    </li>
-  </ul>
-</div>
+{% block material %}
 
 <div class="m-4">
   <div class="d-flex flex-md-row flex-column m-2">
@@ -54,21 +33,6 @@
 
       <h4 class="mt-4">Have you thought about...</h4>
       <div class="form-group">
-        <!-- <form method="POST">
-          {% csrf_token %}
-          {{ shopping_form.as_p }}
-          <input type="submit" name="shopping_submit" value="Add" class="btn btn-secondary mb-4">
-        </form>
-      </div>
-      {% if shopping_list %}
-      <ul class="list-group m-4">
-        {% for item in shopping_list %}
-        <li class="list-group-item">{{ item.item }}</li>
-        {% endfor %}
-      </ul>
-      {% else %}
-      <p class="mt-3">Your considerations list is empty...</p>
-      {% endif %} -->
 
         <ul class="list-group m-4">
           <li class="list-group-item">Bedsheets</li>
@@ -82,5 +46,4 @@
     </div>
   </div>
 
-  {% endif %}
   {% endblock %}

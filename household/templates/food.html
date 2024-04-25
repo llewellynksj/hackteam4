@@ -1,32 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'household_base.html' %}
 
-{% block content %}
-{% if user.is_authenticated %}
+{% block material %}
 
-<div class="mt-3">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'food' %}">Food</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'laundry' %}">Laundry</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'kitchen' %}">Kitchen</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'bins' %}">Bins</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'general' %}">General</a>
-    </li>
-  </ul>
-</div>
-
-<div class="m-4">
+<!-- Meal Ideas -->
+<div class="p-4 food-container">
   <div class="d-flex flex-md-row flex-column m-2">
-    <div class="col-sm-12 col-md-7">
-      <p class="text-center">It's tough coming up with meal plans each week, so help out by adding some ideas of
+    <div class="col-sm-12 col-md-6 px-3 mw-50">
+      <p class="text-left">It's tough coming up with meal plans each week, so help out by adding some ideas of
         different, or favourite, recipes.</p>
 
       <h4>Meal Ideas</h4>
@@ -37,11 +17,18 @@
           <input type="submit" name="task_submit" value="Add" class="btn btn-secondary mb-4">
         </form>
       </div>
-      {% if queryset %}
 
-      <ul class="list-group m-4">
+      {% if queryset %}
+      <ul class="list-group">
         {% for task in queryset %}
-        <li class="list-group-item">{{ task.description }}</li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <span> {{task.description }}</span>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_task' task.pk %}">Delete</a>
+            </div>
+          </div>
+        </li>
         {% endfor %}
       </ul>
 
@@ -49,8 +36,16 @@
       <p class="mt-3">You haven't added any ideas yet...</p>
       {% endif %}
     </div>
-    <div class="col-sm-12 col-md-5 m-3">
-      <p class="text-center">Noticed we're running low of anything? Add it to the shopping list.</p>
+
+    <!-- Page seperator -->
+    <div class="divider d-block d-md-none">
+      <div class="divider-inner"></div><span><i class="fa-thin fa-circle-heart"></i></span>
+    </div>
+
+    <!-- Shopping List -->
+    <div class="col-sm-12 col-md-6 px-3 mw-50">
+      <p class="text-left">Noticed we're running low of anything?<br>
+        Add it to the shopping list.</p>
       <h4 class="mt-4">Shopping List</h4>
 
       <div class="form-group">
@@ -61,9 +56,16 @@
         </form>
       </div>
       {% if shopping_list %}
-      <ul class="list-group m-4">
+      <ul class="list-group">
         {% for item in shopping_list %}
-        <li class="list-group-item">{{ item.item }}</li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <span> {{item.item }}</span>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_shopping_item' item.pk %}">Remove</a>
+            </div>
+          </div>
+        </li>
         {% endfor %}
       </ul>
       {% else %}
@@ -73,5 +75,5 @@
   </div>
 </div>
 
-{% endif %}
+
 {% endblock %}

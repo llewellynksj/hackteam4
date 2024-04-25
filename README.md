@@ -1,110 +1,168 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# FairPlay
+#### An app designed to address the 'invisible load' carried by women
+Developed by **TechTonic Titans** 
 
-Welcome Kate Llewellyn,
+![FairPlay LOGO](https://i.ibb.co/ZGNT1tw/houselogo3.jpg)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### App overview
+FairPlay is an organizational app designed to promote equitable task distribution within households, aiming to ease the disproportionate burden often carried by women. Inspired by the concept of the "invisible load" discussed in Regina F. Lark's TED talk, the app seeks to address the complexities of emotional labor and household management carried by women.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Whether it's stress management, fair task allocation among partners and family members, FairPlay serves as a tool for fostering a more balanced and fulfilling lifestyle. By facilitating transparent communication and collaboration, our goal is to dismantle stereotypes and promote equality in domestic responsibilities.
 
-## Gitpod Reminders
+Join us in challenging societal norms and empowering individuals to share the load, creating healthier and happier homes one step at a time.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Inspiration
+ The idea behind FairPlay was sparked by Regina F. Lark's TED talk, [Emotional labor and the myth of "women's work" by Regina F. Lark | TEDxFolsom](https://www.youtube.com/watch?v=bJLawgDbn_E), shedding light on women's unseen contributions in various aspects of life, particularly household management and motherhood.
 
-`python3 -m http.server`
+View the live project [here](https://hackteam-4-b8cd4765f17b.herokuapp.com/).
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Table of Contents
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [User Experience](#user-experience)
+- [Planning & design](#planning--design)
+- [Features](#existing-features)
+- [Tecnologies used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-A blue button should appear to click: _Make Public_,
+## User Experience
+### Ideal users
+- **Women balancing careers and family responsibilities** can benefit from FairPlay to ensure a fair distribution of household tasks. This aims to reduce stress and promote harmony at home.
+### Other users
+Designed to be versatile, the app can be used for a range of users and purposes.
+- **Stay-at-home mothers** often shoulder the majority of household responsibilities. FairPlay can help them communicate their needs with their partner and family members to delegate tasks more effectively, fostering a sense of appreciation and support.
+- **Housemates** sharing living spaces can use FairPlay to establish clear expectations and avoid conflicts over chores and responsibilities, creating a more harmonious and cooperative living environment.
+- **Families with teenagers** can use FairPlay to teach responsibility and accountability, involving everyone in household chores and fostering a sense of ownership and cooperation among family members.
 
-Another blue button should appear to click: _Open Browser_.
+These are just a few examples, but FairPlay is specifically designed for women, but its aim is to be inclusive and adaptable to the diverse needs of users in various life situations.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### User stories:
 
-To log into the Heroku toolbelt CLI:
+- As a working woman juggling career and family responsibilities, I want to be able to easily assign and track household tasks within the FairPlay app, so that I can ensure a fair distribution of responsibilities and reduce my stress levels.
+- As a stay-at-home mother, I want to use FairPlay to communicate my needs and delegate household tasks effectively to my partner and children, so that I feel supported and appreciated in managing the household.
+- As a housemate sharing a living space with others, I want to utilize FairPlay to establish clear expectations and responsibilities for household chores, so that conflicts and misunderstandings can be avoided, and a harmonious living environment can be maintained.
+- As a parent of teenagers, I want to introduce FairPlay to my family to teach responsibility and accountability, allowing us to involve everyone in household chores and foster a sense of ownership and cooperation among family members.
+- As a user of FairPlay, I want the app to be intuitive and user-friendly, with features like task assignment, tracking, reminders, and communication tools, so that I can easily manage household tasks and collaborate with others.
+- As a user concerned about privacy and security, I want FairPlay to prioritize data protection and secure communication channels, ensuring that personal information and sensitive discussions within the app remain confidential and safe from unauthorized access.
+- As a user looking to promote equality and fairness in household responsibilities, I want FairPlay to provide insights and analytics on task distribution trends, allowing me to identify potential imbalances and address them proactively within my household.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### What the user might expect:
+1. Intuitive Navigation: Users can expect a user-friendly interface with straightforward navigation.
+2. Diverse tasks options: The app offers a wide range of tasks catering to various aspects of life management.
+3. Tasks personalization: Users can personalize their mental health journey by setting goals and tracking their progress over time. This feature helps individuals stay motivated and focused on their well-being objectives.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### As developers, we expect:
+- **Intuitive Navigation and Simplicity of Use**: We expect users to navigate the FairPlay app effortlessly, leveraging its intuitive design and user-friendly interface to access features and functionalities with ease. By prioritizing simplicity of use, users can maximize their productivity and efficiency in managing household tasks without encountering unnecessary complexities.
+- **Active Engagement**: We expect users to actively engage with the FairPlay app by regularly using its features to manage household tasks, communicate with other household members, and track task progress.
+- **Open Communication**: We expect users to engage in open and transparent communication within the app, sharing their needs, preferences, and feedback with other household members to facilitate effective task delegation and collaboration.
+- **Commitment to Fairness**: We expect users to uphold the principles of fairness and equality in task allocation, recognizing the importance of equitable distribution of responsibilities within the household and actively participating in achieving this goal.
 
-------
+## Planning & Design
+### Flowchart
+![flowchart](https://i.ibb.co/drV5Bhz/image-5.png)
 
-## Release History
+[Link to the GitHub Project board](https://github.com/users/llewellynksj/projects/13/views/1)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Wireframes
+#### Household pages
 
-**September 20 2023:** Update Python version to 3.9.17.
+![Household category - Meal ideas](https://i.ibb.co/Tv0jX5w/image-2.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Homepage category - Laundry](https://i.ibb.co/xzGJQbD/image-4.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+#### Users page
+![Family page](https://i.ibb.co/B32mgB4/image-3.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Colour palettes
+![colour palette - 1](https://i.ibb.co/WnmT2tT/054df2a8954d5b0dd91fe9ecb47acf73.jpg)
+![colour palette - 2](https://i.ibb.co/Csmkcq8/pastels-for-energy-color-palette.png)
+Due to the app's purpose of allocating and completing tasks, a 'boost' and energising colour palette was chosen. We wanted to create an environment that encourages productivity and a positive mindset, empowering the user to stay focused and motivated.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Typography
+The font used is Zen Kaku Gothic Antique by Google fonts.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Existing Features 
+### Logo
+![LOGO](https://i.ibb.co/k5dw9wN/my-screenshots-2024-04-24-at-18-11-51.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The logo of our app embodies the essence of household organization and teamwork. It features a stylized depiction of a home, symbolizing the household environment and the tasks associated with it. Above the home, hands are joined together, forming a roof-like structure that represents collaboration and teamwork within the household.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**Home Symbolism**: The home symbolizes the heart of the household, where tasks and responsibilities are managed and organized. It reflects the central focus of our app on helping users streamline their household tasks and routines.
+**Hands as a Roof**: The hands forming a roof above the home signify the collective effort and support within the household. They represent the collaborative spirit and teamwork among family members or housemates in accomplishing tasks and maintaining a well-organized home environment.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Homepage
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The homepage serves as the central hub, offering quick access to various sections of the app. It provides an overview of available features and serves as a starting point for users.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+TO BE ADDED
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## General aspects left to implement
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+TO BE ADDED
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Technologies used
+- HTML5
+- JavaSctipt
+- CSS3
+- Django
+- [Python](https://www.python.org)
+- [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
+- [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
+- [Code Beautify - Python Beautifier](https://codebeautify.org/python-formatter-beautifier) was used to format the code.
+- [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was [used for the deployment.
+- [Git](https://git-scm.com/) was used for version control to commit to Git and Push to GitHub.
+- [GitHub](https://github.com/) was used as the repository for the project after being pushed from Git.
+- [Lucidchart](https://www.lucidchart.com/pages/) was used to create a draft flowchart during the planning process.
+- [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
+- [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 
-------
+## Testing
+Functionality Testing:
+Each feature and functionality within the app is thoroughly tested to ensure it performs as intended.
+Tests cover basic user interactions to verify that key features work without errors.
+Usability Testing:
+User interfaces and navigation are tested to ensure they are intuitive and easy to use.
+Feedback is collected to improve user experience and address any usability issues.
+Device Compatibility:
+The app is tested across various devices and screen sizes to ensure it functions well universally.
+Compatibility checks cover both mobile and desktop platforms.
 
-## FAQ about the uptime script
+## Deployment
+Heroku was used to deploy the site. Here are the steps to deploy:
 
-**Why have you added this script?**
+1. Log in to Heroku.
+2. Click "Create a new app".
+3. Choose the app name and region.
+4. Click "Create app".
+5. Navigate to the "settings" tab.
+6. "Click "Reveal Config Vars".
+7. Add a configuration variable to Heroku's Settings. The key is PORT and the value is 8000
+8. Scroll down to "Buildpacks".
+9. Click "Add Buildpack".
+10. First, add "python" and click save.
+11. Second, add "nodejs" and click save.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Cloning:
+1. Click the "Code" button in the GitHub repository.
+2. Choose "HTTPS" and copy the URL.
+3. Open the Terminam (in macOS) or Git Bash (in Windows) and navigate to the repository where you would like to locate the cloned repository.
+4. Type "git clone" followed by the copied URL.
+5. Press enter to create the clone.
 
-**How will this affect me?**
+### Forking
+You can fork this project and make a copy of the original repository in your own GitHub account. In this case, you can view or make changes without affecting the original. To do so:
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- log into GitHub and locate the GitHub Repository;
+- at the top right of the screen, click the Fork button.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+It should be noted that all changes pushed to the main branch are automatically reflected on the site.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+## Credits
+Various sources and tools from the web were used by the team to create the content.
+[TO BE ADDED]
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+Development team: Kate Llewellyn, James Evans, Clémence Huang,  Stefania Frustagli, Douglas Maxton, Julia Karpa, Giaco Ren
