@@ -42,8 +42,8 @@ class Bins(models.Model):
     next_collection_date = models.DateField(default=date.today)
     frequency = models.CharField(max_length=20, choices=FREQUENCY_CHOICES)
     different_collections_each_week = models.BooleanField(default=False)
-    bins_collected = models.ManyToManyField('Bin', related_name='collected_bins', blank=True)
-    bins_next_collected = models.ManyToManyField('Bin', related_name='collected_next_bins', blank=True)
+    bins_collected = models.ManyToManyField('Bin', related_name='bins_collected', blank=True)
+    bins_next_collected = models.ManyToManyField('Bin', related_name='bins_next_collected', blank=True)
 
     def __str__(self):
         return f'Bins for {self.user.username}'
