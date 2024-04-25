@@ -10,11 +10,9 @@
                         {{ daily_tasks_form.as_p }}
                         <button type="submit" class=" btn btn-primary">Add</button>
                     </form>
-                    <p class="card-text">This is a wider card with the supporting text below as a
-                        natural
-                        lead-in to
-                        additional content.
-                        This content is a little bit longer.</p>
+                    {% for task in query.tasks %}
+                        <p class="card-text">{{ task.daily_tasks }}</p>
+                    {% endfor %}
                 </div>
                 <div class="card-footer">
                     <small class="text-body-secondary">Last updated 3 mains ago</small>

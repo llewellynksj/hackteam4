@@ -106,7 +106,8 @@ class FamilyListView(LoginRequiredMixin, FormView):
         # for loop used to iterate over data, and return only name and age
         for d in data:
             # dictionary literal to append to for fetching name and age from data
-            obj = {'name': d['child_name'], 'age': self.get_age(d['birth_date']), 'tasks': [i for i in tasks]}
+            obj = {'name': d['child_name'], 'age': self.get_age(d['birth_date']),
+                   'tasks': [i for i in tasks if i['child_name'] == d['child_name']]}
 
             # once gathered correct data append to a context list
             context.append(obj)
