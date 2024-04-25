@@ -5,20 +5,20 @@
 
 <div class="mt-3">
   <ul class="nav nav-tabs">
-    <li class="nav-item {% if active_tab == 'food' %}active{% endif %}">
-      <a class="nav-link" href="{% url 'food' %}">Food</a>
+    <li class="nav-item ">
+      <a class="nav-link {% if active_tab == 'food' %}active{% endif %}" href="{% url 'food' %}">Food</a>
     </li>
-    <li class="nav-item {% if active_tab == 'laundry' %}active{% endif %}">
-      <a class="nav-link" href="{% url 'laundry' %}">Laundry</a>
+    <li class="nav-item active">
+      <a class="nav-link {% if active_tab == 'laundry' %}active{% endif %}" href="{% url 'laundry' %}">Laundry</a>
     </li>
-    <li class="nav-item {% if active_tab == 'kitchen' %}active{% endif %}">
-      <a class="nav-link" href="{% url 'kitchen' %}">Kitchen</a>
+    <li class="nav-item">
+      <a class="nav-link {% if active_tab == 'kitchen' %}active{% endif %}" href="{% url 'kitchen' %}">Kitchen</a>
     </li>
-    <li class="nav-item {% if active_tab == 'bins' %}active{% endif %}">
-      <a class="nav-link" href="{% url 'bins' %}">Bins</a>
+    <li class="nav-item">
+      <a class="nav-link {% if active_tab == 'bins' %}active{% endif %}" href="{% url 'bins' %}">Bins</a>
     </li>
-    <li class="nav-item {% if active_tab == 'general' %}active{% endif %}">
-      <a class="nav-link" href="{% url 'general' %}">General</a>
+    <li class="nav-item">
+      <a class="nav-link {% if active_tab == 'general' %}active{% endif %}" href="{% url 'general' %}">General</a>
     </li>
   </ul>
 </div>

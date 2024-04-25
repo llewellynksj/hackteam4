@@ -19,7 +19,14 @@
 
       <ul class="list-group m-4">
         {% for task in queryset %}
-        <li class="list-group-item">{{ task.description }}</li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <span> {{task.description }}</span>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_task' task.pk %}">Delete</a>
+            </div>
+          </div>
+        </li>
         {% endfor %}
       </ul>
 

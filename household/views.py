@@ -8,7 +8,7 @@ from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm, AddToDoForm
 
 
 def display_household(request):
-    return render(request, 'household.html', {})
+    return render(request, 'hh/household.html', {})
 
 class BaseTaskView(View):
     template_name = None
@@ -38,11 +38,12 @@ class BaseTaskView(View):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class FoodTaskView(BaseTaskView):
-    template_name = "food.html"
+    template_name = "hh/food.html"
     category = "food"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['shopping_form'] = AddShoppingForm()
         context['shopping_list'] = Shopping.objects.filter(user=self.request.user)
         context['active_tab'] = 'food' 
         return context
@@ -60,7 +61,7 @@ class FoodTaskView(BaseTaskView):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class LaundryTaskView(BaseTaskView):
-    template_name = "laundry.html"
+    template_name = "hh/laundry.html"
     category = "laundry"
 
     def get_context_data(self, **kwargs):
@@ -81,7 +82,7 @@ class LaundryTaskView(BaseTaskView):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class KitchenTaskView(BaseTaskView):
-    template_name = "kitchen.html"
+    template_name = "hh/kitchen.html"
     category = "kitchen"
 
     def get_context_data(self, **kwargs):
@@ -101,7 +102,7 @@ class KitchenTaskView(BaseTaskView):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class BinsTaskView(BaseTaskView):
-    template_name = "bins.html"
+    template_name = "hh/bins.html"
     category = "bins"
 
     def get_queryset(self):
@@ -137,7 +138,7 @@ class BinsTaskView(BaseTaskView):
         return render(request, self.template_name, self.get_context_data(**kwargs))
 
 class GeneralTaskView(BaseTaskView):
-    template_name = "general.html"
+    template_name = "hh/general.html"
     category = "other"
 
     def get_context_data(self, **kwargs):
