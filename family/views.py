@@ -115,9 +115,6 @@ class FamilyListView(LoginRequiredMixin, FormView):
         # fetches children from db based on logged-in username
         data = self.model.objects.filter(user=self.request.user).values()
         tasks = ChildTasks.objects.filter(user=self.request.user, ).values()
-        tabs = Tabs.objects.filter(user=self.request.user).values()
-
-        print('tabs', tabs)
 
         # empty list used to return only the data that I want
         context = []
