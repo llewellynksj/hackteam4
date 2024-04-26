@@ -128,6 +128,8 @@ background: #B0D8EB;
   /* width: 100%;
   height: 800px;
   flex-shrink: 0; */
+  height: auto;
+  min-height: 450px;
   background: linear-gradient(180deg, #B0D8EB 0%, #BAE5C2 24.5%, #FACC75 43%, #FFB732 62.5%, rgba(255, 150, 101, 0.90) 82.5%, #FF8C04 100%);
 }
 
