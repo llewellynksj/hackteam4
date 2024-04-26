@@ -63,12 +63,19 @@ header {
     display: inline-block;
 }
 
+.family-tasks-delete {
+    width: 100%;
+}
+
+.family-tasks-delete form {
+    width: 100%;
+}
+
 .family-tasks-delete button {
     margin: 0.5em;
     background-color: transparent;
     border: none;
     display: block;
-    width: 100%;
 }
 
 /*!* Add opacity to header for contrast *!*/

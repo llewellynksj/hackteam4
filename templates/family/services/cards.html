@@ -14,16 +14,14 @@
                     </form>
                     {#form for deleting daily tasks when clicked#}
                     <div class="input-group">
-                        <div class="input-group-text">
-                            {% for task in query.tasks %}
-                                <div class="family-tasks-delete">
-                                    <form method="post" action="{% url 'family:daily_task_delete' pk=task.id %}">
-                                        {% csrf_token %}
-                                        <button type="submit">{{ task.daily_tasks }}</button>
-                                    </form>
-                                </div>
-                            {% endfor %}
-                        </div>
+                        {% for task in query.tasks %}
+                            <div class="family-tasks-delete">
+                                <form method="post" action="{% url 'family:daily_task_delete' pk=task.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit">{{ task.daily_tasks }}</button>
+                                </form>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="card-footer">
