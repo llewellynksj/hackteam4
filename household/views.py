@@ -185,3 +185,8 @@ class DeleteShoppingItem(generic.DeleteView):
     model = Shopping
     template_name = 'hh/delete_shopping_item.html'
     success_url = reverse_lazy('food')
+
+def priority_tasks(request):
+    priority_tasks = Task.objects.filter(priority=True)
+
+    return render(request, 'priority.html', {'priority_tasks': priority_tasks})
