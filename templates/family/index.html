@@ -2,11 +2,13 @@
 {% load static %}
 {% block content %}
 
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Add child
-    </button>
+    <div class="child-button">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Add child
+        </button>
+    </div>
 
-    <h1 class="title">Family</h1>
+    <h1 class="title">Family Dashboard</h1>
 
     <div class="container">
         {% if not context.queryset %}
