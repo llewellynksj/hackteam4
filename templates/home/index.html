@@ -1,53 +1,105 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <section class="home-section1">         
-        <h3 id="section-h3">
-            FairPlay - An engaging task sharing partnership tool that brings you closer together.
-        </h3> 
-        <div id="home-section1">
-            Women still shoulder a disproportionate amount of the housework: the “Invisible Load”, especially mothers, who often have even less time and emotional bandwidth to deal with this burden. FairPlay is here to help alleviate the chores, levitate above them and elevate your relationship with your partner to a new emotional level.<br>
-            <br>
-            FairPlay is designed as a “partnership tool” rather than a “management tool”. Together with your partner, you both manage and help each other tackle everyday housework as you’re working towards a common goal that you both set yourself, be it a romantic night out at your favourite local restaurant or a cosy night in, cuddled up on the sofa, watching that film you both went to see on your first date.
-            </div>
-    </section>
-    <section class="home-section2"> 
-        <div id="home-section2">
-            Share and Set Your Goals
-        </div>
-        <div class="cards">
-            <div class="card-1">
-                <h4 id="card-h4">Get reminders to accomplish tasks.</h4>
-                <br>
-                <p class="read-more">Read more</p>
-            </div>
-            <div class="card-2">
-                <h4>Personalise tasks and names.</h4>
-                <br>
-                <p class="read-more">Read more</p>
-            </div>
-             <div class="card-3">
-                <h4>Set a common reward.</h4>
-                <br>
-                 <p class="read-more">Read more</p>
-            </div>
-            <div class="card-4">
-                <h4>Set reminders for important dates.</h4>
-                <br>
-                <p class="read-more">Read more</p>
+<section class="row home-section1 p-3 pb-4">
+    <h2 id="section-h3" class="text-center px-4">
+        FairPlay<br>An engaging task sharing partnership tool that brings you closer together.
+    </h2>
+    <div id="home-section1" class="px-4 pb-4">
+        <p class="lead">Women still shoulder a disproportionate amount of the housework: the “Invisible Load”,
+            especially mothers,
+            who often have even less time and emotional bandwidth to deal with this burden.</p>
+        <p class="lead"><strong>FairPlay is here to help alleviate</strong>
+            the chores, levitate above them and elevate your relationship with your partner to a new emotional level.
+        </p><br>
+        <p class="lead">FairPlay is designed as a “partnership tool” rather than a “management tool”. Together with your
+            partner, you
+            both manage and help each other tackle everyday housework</p>
+    </div>
+</section>
+
+<section class="my-2">
+    <div class="py-4">
+        <h3 class="text-center">Share and Set Your Goals</h3>
+    </div>
+
+    <div class="row justify-content-center my-4 pb-4">
+        <div class="card card-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Personalise tasks and names</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">Card link</a>
             </div>
         </div>
-    </section>
-    <section class="home-section3"> 
-        <div id="home-section3">
-            Visualise your goals and reap the rewards!
+
+        <div class="card card-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">View your Priority tasks</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">Card link</a>
+            </div>
         </div>
-        <div class="chart">
-            <p id="chart-goals">Our Goals</p>
-            <p id="chart-reward">Reward: Dinner at the Royal Oak</p>
-            <img id="pie-chart" src="./static/images/pie-chart.png" alt="goal piechart">
-            <p id="countdown">In: 3 days 8 hours</p>
+
+        <div class="card card-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">View your tasks by due date</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">Card link</a>
+            </div>
         </div>
-    </section>
+
+        <div class="card card-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Meet the FairPlay team</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">Card link</a>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+<section class="row home-section3 pt-4 justify-content-center">
+
+    <div class="row justify-content-around">
+
+        <div class="col col-sm-3 col-md-3 align-self-center text-center" id="home-section3">
+            <h3 class=""><strong>Visualise your goals and reap the rewards!</strong></h3>
+        </div>
+
+        <div class="chart col col-sm-9 col-md-7 container m-1">
+            <div class="m-2">
+                <h5 class="card-title">Our Goals</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Reward: Dinner at the Royal Oak</h6>
+            </div>
+            <hr>
+
+            <div class="row m-3">
+                <div class="col"><img id="piechart" src="./static/images/pie-chart.png" alt="goal piechart"></div>
+
+                <div class="col align-self-center">
+                    <h4 id="countdown" class="">
+                        <stong>Reward In: 3 days 8 hours</stong>
+                    </h4>
+                    <ul>
+                        <li class="name-1">Farrah</li>
+                        <li class="name-2">Freddie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 
 {% endblock content %}

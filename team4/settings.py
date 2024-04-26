@@ -153,14 +153,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-llewellynksj-hackteam4-qebmxudpc8y.ws-eu110.gitpod.io'
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-llewellynksj-hackteam4-qebmxudpc8y.ws-eu110.gitpod.io'
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-llewellynksj-hackteam4-yasjyn4lu59.ws-eu110.gitpod.io'
-]
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
