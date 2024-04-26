@@ -26,6 +26,9 @@ header {
     min-height: 95px;
 }
 
+/*family page*/
+
+
 /*!* Add opacity to header for contrast *!*/
 /*#navigation-opacity {*/
 /*    background: rgba(65, 65, 65, 0.1);*/
@@ -99,7 +102,7 @@ header {
 /*visibility: hidden;*/
 /*opacity: 0;*/
 /*}*/
-/**!*/
+
 
 /*#signup {*/
 /*    display: flex;*/
