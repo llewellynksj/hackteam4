@@ -17,10 +17,10 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     {# css style sheets#}
-    <link rel="stylesheet" href="{% static "css/homepage.css" %}"/>
+    {#    <link rel="stylesheet" href="{% static "css/homepage.css" %}"/>#}
     <link rel="stylesheet" href="{% static "css/styles.css" %}"/>
     <link rel="stylesheet" href="{% static "css/media.css" %}"/>
-    <link rel="stylesheet" href="{% static "css/team.css" %}"/>
+    {#    <link rel="stylesheet" href="{% static "css/team.css" %}"/>#}
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -30,72 +30,95 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-sm bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href={% url 'home:home' %}>Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home:home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'household' %}">Household</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'family:family' %}">Family</a>
-                    </li>
-                    {% if user.is_authenticated %}
+    <div id="navigation-opacity">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href={% url 'home:home' %}>Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
-                               href="{% url 'account_logout' %}">Sign Out</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home:home' %}">Home</a>
                         </li>
-                    {% else %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}"
-                               href="{% url 'account_login' %}">Sign In</a>
+                            <a class="nav-link" href="{% url 'household' %}">Household</a>
                         </li>
-                    {% endif %}
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'family:family' %}">Family</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'team:team' %}">Team</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                   href="{% url 'account_logout' %}">Sign Out</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                   href="{% url 'account_login' %}">Sign In</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>
 
-<main>
-    {% block content %}
-        {#    content goes here#}
-    {% endblock %}
-</main>
+{#<main>#}
+{#    {% block content %}#}
+{#    content goes here#}
+{#    {% endblock %}#}
+{#</main>#}
 
-    <footer>
-        <div class="quotes">
-            <p>“In a busy and overwhelming world, let's do FairPlay!"</p>
-            <p>“It always seems impossible before it’s done."</p>
-            <p>“Keep it simple and focus on what matters. Don’t let yourself be overwhelmed.”</p>
-            <p>“You can do anything but not everything.”</p>
-            <p>"The most valuable skill is aligning everyone with a common goal."</p>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">Copyright © 2024 FairPlay
-                </div>
-                <div class="col-sm-3">Team: TechTonicTitans
-                </div>
-                <div class="col-sm-6">
-                    <a href="https://cloud.google.com/">Google Cloud</a>
-                    <a href="https://www.trustinsoda.com/">Soda Social</a>
-                    <a href="https://codeinstitute.net/">Code Institute</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<footer>
+    <div class="quotes">
+        <h3>Quotes</h3>
+        <p>In a busy and overwhelming world, let's do FairPlay!</p>
+        <p>It always seems impossible before it’s done.</p>
+    </div>
+    <div class="team">
+        <p>Team: TechTonicTitans</p>
+    </div>
+    <div class="links">
+        <a href="https://cloud.google.com/">Google Cloud</a>
+        <a href="https://www.trustinsoda.com/">Soda Social</a>
+        <a href="https://codeinstitute.net/">Code Institute</a>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2024 FairPlay</p>
+    </div>
 
-    <!--bootstrap script tag-->
-    <script crossorigin="anonymous" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+
+    {#        <div class="quotes">#}
+    {#            <p>“In a busy and overwhelming world, let's do FairPlay!"</p>#}
+    {#            <p>“It always seems impossible before it’s done."</p>#}
+    {#            <p>“Keep it simple and focus on what matters. Don’t let yourself be overwhelmed.”</p>#}
+    {#            <p>“You can do anything but not everything.”</p>#}
+    {#            <p>"The most valuable skill is aligning everyone with a common goal."</p>#}
+    {#        </div>#}
+    {#        <div class="container">#}
+    {#            <div class="row">#}
+    {#                <div class="col-sm-3">Copyright © 2024 FairPlay#}
+    {#                </div>#}
+    {#                <div class="col-sm-3">Team: TechTonicTitans#}
+    {#                </div>#}
+    {#                <div class="col-sm-6">#}
+    {#                    <a href="https://cloud.google.com/">Google Cloud</a>#}
+    {#                    <a href="https://www.trustinsoda.com/">Soda Social</a>#}
+    {#                    <a href="https://codeinstitute.net/">Code Institute</a>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+</footer>
+
+<!--bootstrap script tag-->
+<script crossorigin="anonymous" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

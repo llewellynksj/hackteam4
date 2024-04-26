@@ -1,4 +1,4 @@
-*{
+/**{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,6 +6,7 @@
 body{
     background: #B0D8EB;
 }
+*/
 .wrapper{
 margin-top: 10%;
 }
@@ -38,7 +39,8 @@ margin-top: 10%;
     font-size: 26px;
     margin-top: 50px;
 }
-.team .team_member p.aboutme{
+
+.team .team_member p.about-me {
 text-align: auto;
 }
 .team .team_member p.Github{
