@@ -171,7 +171,7 @@ line-height: 120%;
 padding: 59px 145px 30px 30px;
 }
 
-.readmore {
+.read-more {
 color: #3D3D3D;
 font-size: 13px;
 font-style: normal;
@@ -277,7 +277,7 @@ padding-left: 52px;
 padding-top: 10px;
 }
 
-#piechart {
+#pie-chart {
 display: block;
 width: 271px;
 height: 271px;
