@@ -30,8 +30,8 @@ View the live project [here](https://hackteam-4-b8cd4765f17b.herokuapp.com/).
 ## User Experience
 ### Ideal users
 - **Women balancing careers and family responsibilities** can benefit from FairPlay to ensure a fair distribution of household tasks. This aims to reduce stress and promote harmony at home.
-### Other users
-Designed to be versatile, the app can be used for a range of users and purposes.
+### Other potential users
+Designed to be versatile, the app can be used for a range of users and purposes:
 - **Stay-at-home mothers** often shoulder the majority of household responsibilities. FairPlay can help them communicate their needs with their partner and family members to delegate tasks more effectively, fostering a sense of appreciation and support.
 - **Housemates** sharing living spaces can use FairPlay to establish clear expectations and avoid conflicts over chores and responsibilities, creating a more harmonious and cooperative living environment.
 - **Families with teenagers** can use FairPlay to teach responsibility and accountability, involving everyone in household chores and fostering a sense of ownership and cooperation among family members.
@@ -69,7 +69,7 @@ Project Management: we utilised GitHub Project boards to manage tasks, user stor
 [Link to the GitHub Project board](https://github.com/users/llewellynksj/projects/13/views/1)
 
 ### Flowchart
-![flowchart](https://i.ibb.co/drV5Bhz/image-5.png)
+![flowchart](https://i.ibb.co/yRc0hLr/image-6.png)
 
 ### Wireframes
 #### Household pages
@@ -83,6 +83,7 @@ Project Management: we utilised GitHub Project boards to manage tasks, user stor
 
 ### Colour palettes
 ![colour palette - 1](https://i.ibb.co/Zmwqs1g/Brand-Colours.png)
+
 Due to the app's purpose of allocating and completing tasks, a 'boost' and energising colour palette was chosen. We wanted to create an environment that encourages productivity and a positive mindset, empowering the user to stay focused and motivated.
 
 ### Typography
@@ -101,7 +102,6 @@ The logo of our app embodies the essence of household organization and teamwork.
 The logo was used as favicon.
 
 ### Homepage
-
 The homepage serves as the central hub, offering quick access to various sections of the app. It provides an overview of the available features and serves as a starting point for users.
 
 **Description of the app in the homepage**:
@@ -110,14 +110,17 @@ The homepage serves as the central hub, offering quick access to various section
 > FairPlay is designed as a “partnership tool” rather than a “management tool”. Together with your partner, you both manage and help each other tackle everyday housework as you’re working towards a common goal that you both set yourself, be it a romantic night out at your favourite local restaurant or a cosy night in, cuddled up on the sofa, watching that film you both went to see on your first date.
 
 Functionalities available in the homepage:
-- Get reminder to accomplish tasks
-![]()
-
 - Personalise tasks and names
+- View your Priority tasks
+- View your tasks by due date
+- Meet the FairPlay team
 
-- Set a common reward 
+![Homepage functionalities section](https://i.ibb.co/Q9N0mL1/my-screenshots-2024-04-26-at-13-49-55.png)
 
-- Set reminder for important dates
+### Team
+
+The "Team" section introduces the members of our development team, providing insights into their personalities:
+![Meet the team](https://i.ibb.co/L95y67z/my-screenshots-2024-04-26-at-13-41-35.png)
 
 ## General aspects left to implement
 
@@ -137,7 +140,6 @@ Functionalities available in the homepage:
 - [GitHub](https://github.com/) was used as the repository for the project after being pushed from Git.
 - [Lucidchart](https://www.lucidchart.com/pages/) was used to create a draft flowchart during the planning process.
 - [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
-- [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 - [Balsamiq](https://balsamiq.com/wireframes/desktop/#) was used to create the wireframes.
 - [befunky](https://www.befunky.com/) was used to create the logo.
 
