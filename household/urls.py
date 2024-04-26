@@ -10,4 +10,5 @@ urlpatterns = [
   path('general/', views.GeneralTaskView.as_view(), name='general'),
   path('delete_task/<int:pk>/', views.DeleteTask.as_view(), name='delete_task'),
   path('delete_shopping_item/<int:pk>/', views.DeleteShoppingItem.as_view(), name='delete_shopping_item'),
+  path('priority/', priority_tasks, name='priority_tasks'),
 ]
