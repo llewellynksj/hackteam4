@@ -60,10 +60,16 @@ These are just a few examples, but FairPlay is specifically designed for women, 
 - **Commitment to Fairness**: We expect users to uphold the principles of fairness and equality in task allocation, recognizing the importance of equitable distribution of responsibilities within the household and actively participating in achieving this goal.
 
 ## Planning & Design
-### Flowchart
-![flowchart](https://i.ibb.co/drV5Bhz/image-5.png)
+
+### Agile Development
+The development process for this project followed an Agile methodology, emphasizing continuous improvement throughout the development lifecycle. We assigned tasks to each others and this helped us distribute workload efficiently, ensuring clarity on responsibilities.
+
+Project Management: we utilised GitHub Project boards to manage tasks, user stories, and project progression effectively.
 
 [Link to the GitHub Project board](https://github.com/users/llewellynksj/projects/13/views/1)
+
+### Flowchart
+![flowchart](https://i.ibb.co/drV5Bhz/image-5.png)
 
 ### Wireframes
 #### Household pages
@@ -76,15 +82,14 @@ These are just a few examples, but FairPlay is specifically designed for women, 
 ![Family page](https://i.ibb.co/B32mgB4/image-3.png)
 
 ### Colour palettes
-![colour palette - 1](https://i.ibb.co/WnmT2tT/054df2a8954d5b0dd91fe9ecb47acf73.jpg)
-![colour palette - 2](https://i.ibb.co/Csmkcq8/pastels-for-energy-color-palette.png)
+![colour palette - 1](https://i.ibb.co/Zmwqs1g/Brand-Colours.png)
 Due to the app's purpose of allocating and completing tasks, a 'boost' and energising colour palette was chosen. We wanted to create an environment that encourages productivity and a positive mindset, empowering the user to stay focused and motivated.
 
 ### Typography
 The font used is Zen Kaku Gothic Antique by Google fonts.
 
 ## Existing Features 
-### Logo
+### Logo 
 ![LOGO](https://i.ibb.co/k5dw9wN/my-screenshots-2024-04-24-at-18-11-51.png)
 
 The logo of our app embodies the essence of household organization and teamwork. It features a stylized depiction of a home, symbolizing the household environment and the tasks associated with it. Above the home, hands are joined together, forming a roof-like structure that represents collaboration and teamwork within the household.
@@ -92,16 +97,31 @@ The logo of our app embodies the essence of household organization and teamwork.
 **Home Symbolism**: The home symbolizes the heart of the household, where tasks and responsibilities are managed and organized. It reflects the central focus of our app on helping users streamline their household tasks and routines.
 **Hands as a Roof**: The hands forming a roof above the home signify the collective effort and support within the household. They represent the collaborative spirit and teamwork among family members or housemates in accomplishing tasks and maintaining a well-organized home environment.
 
+### Favicon
+The logo was used as favicon.
+
 ### Homepage
 
-The homepage serves as the central hub, offering quick access to various sections of the app. It provides an overview of available features and serves as a starting point for users.
+The homepage serves as the central hub, offering quick access to various sections of the app. It provides an overview of the available features and serves as a starting point for users.
 
-TO BE ADDED
+**Description of the app in the homepage**:
+> Women still shoulder a disproportionate amount of the housework: the “Invisible Load”, especially mothers, who often have even less time and emotional bandwidth to deal with this burden. FairPlay is here to help alleviate the chores, levitate above them and elevate your relationship with your partner to a new emotional level. 
+
+> FairPlay is designed as a “partnership tool” rather than a “management tool”. Together with your partner, you both manage and help each other tackle everyday housework as you’re working towards a common goal that you both set yourself, be it a romantic night out at your favourite local restaurant or a cosy night in, cuddled up on the sofa, watching that film you both went to see on your first date.
+
+Functionalities available in the homepage:
+- Get reminder to accomplish tasks
+![]()
+
+- Personalise tasks and names
+
+- Set a common reward 
+
+- Set reminder for important dates
 
 ## General aspects left to implement
 
-TO BE ADDED
-
+**Sharing functionality**: one outstanding feature to be implemented is the ability to share task progress with other user accounts. This functionality will enhance collaboration and communication among users, allowing for greater transparency and coordination in task management.
 
 ## Technologies used
 - HTML5
@@ -118,6 +138,8 @@ TO BE ADDED
 - [Lucidchart](https://www.lucidchart.com/pages/) was used to create a draft flowchart during the planning process.
 - [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
 - [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
+- [Balsamiq](https://balsamiq.com/wireframes/desktop/#) was used to create the wireframes.
+- [befunky](https://www.befunky.com/) was used to create the logo.
 
 ## Testing
 Functionality Testing:
@@ -160,9 +182,7 @@ You can fork this project and make a copy of the original repository in your own
 
 It should be noted that all changes pushed to the main branch are automatically reflected on the site.
 
-
 ## Credits
 Various sources and tools from the web were used by the team to create the content.
-[TO BE ADDED]
 
-Development team: Kate Llewellyn, James Evans, Clémence Huang,  Stefania Frustagli, Douglas Maxton, Julia Karpa, Giaco Ren
+Development team: Kate Llewellyn, James Evans, Clémence Huang, Stefania Frustagli, Douglas Maxton, Julia Karpa

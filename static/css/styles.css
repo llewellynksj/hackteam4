@@ -2,9 +2,9 @@
 
 /*general*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
 }
 
 html {
@@ -22,16 +22,12 @@ main {
 
 /*!*header*!*/
 header {
-    /*position: absolute;*/
-    width: 100%;
-    top: 0;
-    /*height: 95px;*/
-    /*flex-shrink: 0;*/
-    background: #B0D8EB;
+  width: 100%;
+  background: #B0D8EB;
 }
 
 .navbar {
-    min-height: 95px;
+  min-height: 95px;
 }
 
 /*family page*/
@@ -84,188 +80,154 @@ header {
 /*    z-index: 10;*/
 /*}*/
 
-/*!*.navbar-brand {*!*/
-/*!*    display: flex;*!*/
-/*!*    width: 112px;*!*/
-/*!*    height: 29px;*!*/
-/*!*    flex-direction: column;*!*/
-/*!*    justify-content: center;*!*/
-/*!*    color: #ffffff;*!*/
-/*!*    font-size: 20px;*!*/
-/*!*    font-style: normal;*!*/
-/*!*    font-weight: 700;*!*/
-/*!*    line-height: normal;*!*/
-/*!*}*!*/
+.navbar-brand {
+  display: flex;
+  width: 112px;
+  height: 29px;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 
-/*.navbar-nav {*/
-/*    z-index: 1;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    color: #FFF;*/
-/*    font-size: 20px;*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    line-height: normal;*/
-/*}*/
+.navbar-nav {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
-/*.navbar-nav {*/
-/*    display: flex;*/
-/*    width: 1122px;*/
-/*    justify-content: flex-end;*/
-/*    align-items: flex-start;*/
-/*    gap: 30px;*/
-/*}*/
+.navbar-nav {
+  display: flex;
+  width: 1122px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 30px;
+}
 
-/*.nav-item {*/
-/*    list-style-type: none;*/
-/*    overflow: hidden;*/
-/*}*/
+.nav-item {
+  list-style-type: none;
+  overflow: hidden;
+}
 
-/*.nav-link {*/
-/*    color: #FFF;*/
-/*    font-size: 20px;*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    line-height: normal;*/
-/*    text-decoration: none;*/
-/*    list-style-type: none;*/
-/*    cursor: pointer;*/
-/*}*/
+.nav-link {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+} */
 
-/*!* HOME page *!*/
+/* HOME page */
 
-/*body {*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    display: inline-flex;*/
-/*    flex-direction: column;*/
-/*    align-items: flex-start;*/
-/*    gap: 99px;*/
-/*    background: #FFF;*/
-/*    min-height: 100vh;*/
-/*}*/
+body {
+  font-family: "Zen Kaku Gothic Antique";
+  /* display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 99px;
+  background: #FFF;
+  min-height: 100vh; */
+}
 
-/*!* not sure this is still required*/
-/*input {*/
-/*visibility: hidden;*/
-/*opacity: 0;*/
-/*}*/
+/* not sure this is still required
+input {
+visibility: hidden;
+opacity: 0;
+}
+*/
 
+#signup {
+  display: flex;
+  height: 20px;
+  padding: 18px 20px;
+  border-radius: 59px;
+  background: #6FB0CF;
+  align-items: center;
+}
 
-/*#signup {*/
-/*    display: flex;*/
-/*    height: 20px;*/
-/*    padding: 18px 20px;*/
-/*    border-radius: 59px;*/
-/*    background: #6FB0CF;*/
-/*    align-items: center;*/
-/*}*/
+#login {
+  display: flex;
+  height: 20px;
+  padding: 18px 36px;
+  border-radius: 59px;
+  background: #FFF;
+  align-items: center;
+  color: #7ABCDA;
+  text-align: center;
+}
 
-/*#login {*/
-/*    display: flex;*/
-/*    height: 20px;*/
-/*    padding: 18px 36px;*/
-/*    border-radius: 59px;*/
-/*    background: #FFF;*/
-/*    align-items: center;*/
-/*    color: #7ABCDA;*/
-/*    text-align: center;*/
-/*}*/
+/* main {
+padding-top: 95px;
+background: #B0D8EB;
+} */
 
-/*main {*/
-/*    padding-top: 95px;*/
-/*    background: #B0D8EB;*/
-/*}*/
+/* HOME page - Section 1 */
 
-/*!* HOME page - Section 1 *!*/
+.home-section1 {
+  /* width: 100%;
+  height: 800px;
+  flex-shrink: 0; */
+  height: auto;
+  min-height: 450px;
+  background: linear-gradient(180deg, #B0D8EB 0%, #BAE5C2 24.5%, #FACC75 43%, #FFB732 62.5%, rgba(255, 150, 101, 0.90) 82.5%, #FF8C04 100%);
+}
 
-/*.home-section1 {*/
-/*    width: 100%;*/
-/*    height: 800px;*/
-/*    flex-shrink: 0;*/
-/*    background: linear-gradient(180deg, rgba(176, 216, 235, 0.70) 0%, #BDDAC2 24.5%, #EED5A5 43%, #EECA87 62.5%, rgba(248, 163, 123, 0.90) 82.5%, #FB8800 100%);*/
-/*}*/
+#section-h3 {
+  color: #ffffff;
+  /* text-align: center; */
+  font-family: "Zen Kaku Gothic Antique";
+  /* font-size: 45px; */
+  font-style: normal;
+  font-weight: 700;
+  /* line-height: normal; */
+  /* padding: 200px 350px 50px; */
+}
 
-/*#section-h3 {*/
-/*    color: #ffffff;*/
-/*    text-align: center;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 45px;*/
-/*    font-style: normal;*/
-/*    font-weight: 700;*/
-/*    line-height: normal;*/
-/*    padding: 200px 350px 50px;*/
-/*}*/
+#home-section1 {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  /* padding: 20px 395px 800px; */
+}
 
-/*#home-section1 {*/
-/*    color: #ffffff;*/
-/*    text-align: center;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 16px;*/
-/*    font-style: normal;*/
-/*    font-weight: 500;*/
-/*    line-height: normal;*/
-/*    padding: 20px 395px 800px;*/
-/*}*/
+/* HOME page - Section 2 */
 
-/*!* HOME page - Section 2 *!*/
+.card {
+  margin: 5px;
+}
 
-/*.home-section2 {*/
-/*    display: inline-flex;*/
-/*    flex-direction: column;*/
-/*    align-items: flex-start;*/
-/*    gap: 99px;*/
-/*}*/
+.card-1 {
+  background-color: #E8F2E9;
+}
 
-/*#home-section2 {*/
-/*    display: flex;*/
-/*    color: #7ABCDA;*/
-/*    text-align: center;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 40px;*/
-/*    font-style: normal;*/
-/*    font-weight: 700;*/
-/*    line-height: normal;*/
-/*}*/
+.card-2 {
+  background-color: #F9EDE6;
+}
 
-/*#card-h4 {*/
-/*    width: 231px;*/
-/*    color: #3D3D3D;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 32px;*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    line-height: 120%;*/
-/*    padding: 59px 145px 30px 30px;*/
-/*}*/
+.card-3 {
+  background-color: #FEE0BB;
+}
 
-/*.read-more {*/
-/*    color: #3D3D3D;*/
-/*    font-size: 13px;*/
-/*    font-style: normal;*/
-/*    font-weight: 500;*/
-/*    line-height: 140%;*/
-/*    padding: 0 30px;*/
-/*}*/
-
-/*.cards {*/
-/*    display: flex;*/
-/*    width: auto;*/
-/*    height: 470px;*/
-/*    text-align: center;*/
-/*    justify-content: center;*/
-/*    gap: 16px 17px;*/
-/*    flex-wrap: wrap;*/
-/*}*/
-
-/*.card-1 {*/
-/*    width: 290px;*/
-/*    height: 356px;*/
-/*    flex-shrink: 0;*/
-/*    border-radius: 16px;*/
-/*    background: #B0D8EB;*/
-/*}*/
+.card-4 {
+  background-color: #E9F4F9;
+}
 
 /*.card-2 {*/
 /*    width: 290px;*/
@@ -275,210 +237,136 @@ header {
 /*    background: #EEDE87;*/
 /*}*/
 
-/*.card-3 {*/
-/*    width: 290px;*/
-/*    height: 356px;*/
-/*    flex-shrink: 0;*/
-/*    border-radius: 16px;*/
-/*    background: #FECEC7;*/
-/*}*/
+/* HOME page - Section 3 */
 
-/*.card-4 {*/
-/*    width: 290px;*/
-/*    height: 356px;*/
-/*    flex-shrink: 0;*/
-/*    border-radius: 16px;*/
-/*    background: #BDDAC2;*/
-/*}*/
+.home-section3 {
+  /* display: flex; */
+  /* width: 1440px; */
+  /* padding: 110px 110px 72px 110px; */
+  /* justify-content: center;
+  align-items: center; */
+  background: #B0D8EB;
+}
 
-/*!* HOME page - Section 3 *!*/
+#home-section3 {
+  /* width: 456px; */
+  color: #FFF;
+  font-family: "Zen Kaku Gothic Antique";
+  /* font-size: 36px;
+  font-style: normal;
+  font-weight: 700; */
+  /* line-height: 48px; */
+}
 
-/*.home-section3 {*/
-/*    display: flex;*/
-/*    width: 1440px;*/
-/*    padding: 110px 110px 72px 110px;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    background: #B0D8EB;*/
-/*}*/
+.chart {
+  /* width: 764px;
+  height: 473px;
+  flex-shrink: 0; */
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px 0px rgba(13, 10, 44, 0.08);
+  background: #F5F5F5;
+}
 
-/*#home-section3 {*/
-/*    width: 456px;*/
-/*    color: #FFF;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 36px;*/
-/*    font-style: normal;*/
-/*    font-weight: 700;*/
-/*    line-height: 48px;*/
-/*}*/
+#chart-goals {
+  color: var(--Neutral-Colors-400, #9291A5);
+  font-feature-settings: 'clig'off, 'liga'off;
+  font-family: "Zen Kaku Gothic Antique";
+  /* font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding-left: 52px;
+  padding-top: 40px; */
+}
 
-/*.chart {*/
-/*    width: 764px;*/
-/*    height: 473px;*/
-/*    flex-shrink: 0;*/
-/*    border-radius: 20px;*/
-/*    box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);*/
-/*    background: #F5F5F5;*/
-/*}*/
+#chart-reward {
+  color: var(--Neutral-Colors-Black, #1E1B39);
+  font-feature-settings: 'clig'off, 'liga'off;
+  font-family: "Zen Kaku Gothic Antique";
+  /* font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  padding-left: 52px;
+  padding-top: 10px; */
+}
 
-/*#chart-goals {*/
-/*    !*color: var(--Neutral-Colors-400, #9291A5);*!*/
-/*    font-feature-settings: 'clig' off, 'liga' off;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 18px;*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    line-height: 20px;*/
-/*    padding-left: 52px;*/
-/*    padding-top: 40px;*/
-/*}*/
+.name-1 {
+  color: #E0A029;
+}
 
-/*#chart-reward {*/
-/*    !*color: var(--Neutral-Colors-Black, #1E1B39);*!*/
-/*    font-feature-settings: 'clig' off, 'liga' off;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 22px;*/
-/*    font-style: normal;*/
-/*    font-weight: 700;*/
-/*    line-height: 28px;*/
-/*    padding-left: 52px;*/
-/*    padding-top: 10px;*/
-/*}*/
+.name-2 {
+  color: #FC9112;
+}
 
-/*#pie-chart {*/
-/*    display: block;*/
-/*    width: 271px;*/
-/*    height: 271px;*/
-/*    flex-shrink: 0;*/
-/*}*/
+#piechart {
+  display: block;
+  width: 271px;
+  height: 271px;
+  flex-shrink: 0;
+}
 
-/*#countdown {*/
-/*    color: #1E1B39;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 44px;*/
-/*    font-style: normal;*/
-/*    font-weight: 700;*/
-/*    line-height: 52px;*/
-/*}*/
+#countdown {
+  color: #1E1B39;
+  font-family: "Zen Kaku Gothic Antique";
+  /* font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px; */
+}
 
-/*!* TEAM page *!*/
+/* TEAM page */
 
-/*.team-wrapper {*/
-/*    margin-top: 10%;*/
-/*    background: #B0D8EB;*/
-/*}*/
+.team-wrapper {
+  margin-top: 10%;
+  background: #B0D8EB;
+}
 
-/*.team-wrapper h1 {*/
-/*    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
-/*    color: #fff;*/
-/*    font-size: 52px;*/
-/*    margin-bottom: 60px;*/
-/*    text-align: center;*/
-/*}*/
+.team-wrapper h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #fff;
+  font-size: 52px;
+  margin-bottom: 60px;
+  text-align: center;
+}
 
-/*.team {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    text-align: center;*/
-/*    width: auto;*/
-/*    justify-content: center;*/
-/*}*/
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: auto;
+  justify-content: center;
+}
 
-/*.team .team_member {*/
-/*    background: #fff;*/
-/*    margin: 5px 5px 50px;*/
-/*    width: 300px;*/
-/*    padding: 20px;*/
-/*    line-height: 20px;*/
-/*    color: #000;*/
-/*    position: relative;*/
-/*}*/
+.team .team_member {
+  background: #fff;
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #000;
+  position: relative;
+}
 
-/*.team .team_member h3 {*/
-/*    font-size: 26px;*/
-/*    margin-top: 50px;*/
-/*}*/
+.team .team_member h3 {
+  font-size: 26px;
+  margin-top: 50px;
+}
 
-/*.team .team_member p.about-me {*/
-/*    text-align: center;*/
-/*}*/
+.team .team_member p.aboutme {
+  text-align: auto;
+}
 
-/*.team .team_member p.Github {*/
-/*    font-size: 12px;*/
-/*    font-weight: bold;*/
-/*}*/
+.team .team_member p.Github {
+  font-size: 12px;
+  font-weight: bold;
+}
 
-/*.team .team_member p.LinkedIn {*/
-/*    font-size: 12px;*/
-/*    font-weight: bold;*/
-/*}*/
-
-
-/*!*Family Styles*!*/
-/*.title {*/
-/*    font-size: 5em;*/
-/*    text-align: center;*/
-/*    padding: 0.5em;*/
-/*}*/
-
-/*.tab_content {*/
-/*    padding: 3em;*/
-/*}*/
-
-/*!* Household Styles *!*/
-
-/*!* Page divider *!*/
-/*!* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon':*/
-/*    https://codepen.io/isabelc/pen/MmrJgx *!*/
-
-/*.divider {*/
-/*    margin: 40px auto;*/
-/*    width: 700px;*/
-/*    max-width: 100%;*/
-/*    position: relative;*/
-/*}*/
-
-/*.divider-inner {*/
-/*    overflow: hidden;*/
-/*    height: 20px;*/
-/*}*/
-
-/*.divider-inner:after {*/
-/*    content: '';*/
-/*    display: block;*/
-/*    margin: -25px auto 0;*/
-/*    width: 100%;*/
-/*    height: 25px;*/
-/*    border-radius: 10px;*/
-/*    box-shadow: 0 0 10px #F35D17;*/
-/*}*/
-
-/*.divider span {*/
-/*    width: 45px;*/
-/*    height: 45px;*/
-/*    position: absolute;*/
-/*    bottom: 100%;*/
-/*    margin-bottom: -25px;*/
-/*    left: 50%;*/
-/*    margin-left: -25px;*/
-/*    border-radius: 100%;*/
-/*    box-shadow: 0 2px 4px #F35D17;*/
-/*    background: #fff;*/
-/*}*/
-
-/*.divider i {*/
-/*    position: absolute;*/
-/*    top: 4px;*/
-/*    bottom: 4px;*/
-/*    left: 4px;*/
-/*    right: 4px;*/
-/*    border-radius: 100%;*/
-/*    border: 1px dashed #F35D17;*/
-/*    text-align: center;*/
-/*    line-height: 40px;*/
-/*    color: #F35D17;*/
-/*    font-size: 30px;*/
-/*}*/
+.team .team_member p.LinkedIn {
+  font-size: 12px;
+  font-weight: bold;
+}
 
 /* Footer */
 footer {
@@ -511,6 +399,7 @@ footer {
 }
 
 .links a {
+  margin: auto;
     margin: auto;
 }
 
@@ -521,34 +410,68 @@ footer {
     margin: 1em auto 0;
 }
 
+/*Family Styles*/
+.title {
+  font-size: 5em;
+  text-align: center;
+  padding: 0.5em;
+}
 
-/*footer {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    background: #B0D8EB;*/
-/*}*/
+.tab_content {
+  padding: 3em;
+}
 
-/*#house-logo {*/
-/*    display: block;*/
-/*    width: 92px;*/
-/*    height: 130px;*/
-/*    !*background: url(<path-to-image>) / cover no-repeat;*!*/
-/*}*/
+/* Household Styles */
 
-/*.copyright {*/
-/*    display: flex;*/
-/*    width: 1240px;*/
-/*    padding: 24px 0;*/
-/*    justify-content: space-between;*/
-/*    align-items: flex-start;*/
-/*}*/
+/* Page divider */
+/* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon':
+    https://codepen.io/isabelc/pen/MmrJgx */
 
-/*#copyright {*/
-/*    color: #FFF;*/
-/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
-/*    font-size: 16px;*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    line-height: normal;*/
-/*}*/
+.divider {
+  margin: 40px auto;
+  width: 700px;
+  max-width: 100%;
+  position: relative;
+}
+
+.divider-inner {
+  overflow: hidden;
+  height: 20px;
+}
+
+.divider-inner:after {
+  content: '';
+  display: block;
+  margin: -25px auto 0;
+  width: 100%;
+  height: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #F35D17;
+}
+
+.divider span {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -25px;
+  left: 50%;
+  margin-left: -25px;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px #F35D17;
+  background: #fff;
+}
+
+.divider i {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  border-radius: 100%;
+  border: 1px dashed #F35D17;
+  text-align: center;
+  line-height: 40px;
+  color: #F35D17;
+  font-size: 30px;
+}
