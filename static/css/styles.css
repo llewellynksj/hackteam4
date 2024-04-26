@@ -54,8 +54,21 @@ header {
     margin: 2em;
 }
 
+.input-group {
+    display: flex;
+    padding: 2em;
+}
+
 .input-group-text {
     display: inline-block;
+}
+
+.family-tasks-delete button {
+    margin: 0.5em;
+    background-color: transparent;
+    border: none;
+    display: block;
+    width: 100%;
 }
 
 /*!* Add opacity to header for contrast *!*/
