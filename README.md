@@ -69,7 +69,7 @@ Project Management: we utilised GitHub Project boards to manage tasks, user stor
 [Link to the GitHub Project board](https://github.com/users/llewellynksj/projects/13/views/1)
 
 ### Flowchart
-![flowchart](https://i.ibb.co/drV5Bhz/image-5.png)
+![flowchart](https://i.ibb.co/yRc0hLr/image-6.png)
 
 ### Wireframes
 #### Household pages
