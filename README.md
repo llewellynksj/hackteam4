@@ -69,7 +69,7 @@ Project Management: we utilised GitHub Project boards to manage tasks, user stor
 [Link to the GitHub Project board](https://github.com/users/llewellynksj/projects/13/views/1)
 
 ### Flowchart
-![flowchart](https://i.ibb.co/yRc0hLr/image-6.png)
+![flowchart](docs/flowchart.png)
 
 ### Wireframes
 #### Household pages
@@ -82,7 +82,7 @@ Project Management: we utilised GitHub Project boards to manage tasks, user stor
 ![Family page](https://i.ibb.co/B32mgB4/image-3.png)
 
 ### Colour palettes
-![colour palette - 1](https://i.ibb.co/Zmwqs1g/Brand-Colours.png)
+![colour palette](docs/colours.png)
 
 Due to the app's purpose of allocating and completing tasks, a 'boost' and energising colour palette was chosen. We wanted to create an environment that encourages productivity and a positive mindset, empowering the user to stay focused and motivated.
 
