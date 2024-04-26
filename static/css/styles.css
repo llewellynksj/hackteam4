@@ -6,452 +6,494 @@
     box-sizing: border-box;
 }
 
-/*header*/
+body {
+    min-height: 100vh;
+}
+
+/*!*header*!*/
 
 header {
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
-    height: 95px;
-    flex-shrink: 0;
+    /*height: 95px;*/
+    /*flex-shrink: 0;*/
     background: #B0D8EB;
 }
 
-/* Navigation */
+/*!* Navigation *!*/
 
 .navbar {
     min-height: 95px;
 }
 
-/* Add opacity to header for contrast */
-#navigation-opacity {
-    background: rgba(65, 65, 65, 0.1);
-    z-index: 10;
-}
+/*!* Add opacity to header for contrast *!*/
+/*#navigation-opacity {*/
+/*    background: rgba(65, 65, 65, 0.1);*/
+/*    z-index: 10;*/
+/*}*/
 
-/*.navbar-brand {*/
+/*!*.navbar-brand {*!*/
+/*!*    display: flex;*!*/
+/*!*    width: 112px;*!*/
+/*!*    height: 29px;*!*/
+/*!*    flex-direction: column;*!*/
+/*!*    justify-content: center;*!*/
+/*!*    color: #ffffff;*!*/
+/*!*    font-size: 20px;*!*/
+/*!*    font-style: normal;*!*/
+/*!*    font-weight: 700;*!*/
+/*!*    line-height: normal;*!*/
+/*!*}*!*/
+
+/*.navbar-nav {*/
+/*    z-index: 1;*/
 /*    display: flex;*/
-/*    width: 112px;*/
-/*    height: 29px;*/
 /*    flex-direction: column;*/
 /*    justify-content: center;*/
-/*    color: #ffffff;*/
+/*    align-items: center;*/
+/*    color: #FFF;*/
 /*    font-size: 20px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: normal;*/
+/*}*/
+
+/*.navbar-nav {*/
+/*    display: flex;*/
+/*    width: 1122px;*/
+/*    justify-content: flex-end;*/
+/*    align-items: flex-start;*/
+/*    gap: 30px;*/
+/*}*/
+
+/*.nav-item {*/
+/*    list-style-type: none;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.nav-link {*/
+/*    color: #FFF;*/
+/*    font-size: 20px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: normal;*/
+/*    text-decoration: none;*/
+/*    list-style-type: none;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*!* HOME page *!*/
+
+/*body {*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    display: inline-flex;*/
+/*    flex-direction: column;*/
+/*    align-items: flex-start;*/
+/*    gap: 99px;*/
+/*    background: #FFF;*/
+/*    min-height: 100vh;*/
+/*}*/
+
+/*!* not sure this is still required*/
+/*input {*/
+/*visibility: hidden;*/
+/*opacity: 0;*/
+/*}*/
+/**!*/
+
+/*#signup {*/
+/*    display: flex;*/
+/*    height: 20px;*/
+/*    padding: 18px 20px;*/
+/*    border-radius: 59px;*/
+/*    background: #6FB0CF;*/
+/*    align-items: center;*/
+/*}*/
+
+/*#login {*/
+/*    display: flex;*/
+/*    height: 20px;*/
+/*    padding: 18px 36px;*/
+/*    border-radius: 59px;*/
+/*    background: #FFF;*/
+/*    align-items: center;*/
+/*    color: #7ABCDA;*/
+/*    text-align: center;*/
+/*}*/
+
+/*main {*/
+/*    padding-top: 95px;*/
+/*    background: #B0D8EB;*/
+/*}*/
+
+/*!* HOME page - Section 1 *!*/
+
+/*.home-section1 {*/
+/*    width: 100%;*/
+/*    height: 800px;*/
+/*    flex-shrink: 0;*/
+/*    background: linear-gradient(180deg, rgba(176, 216, 235, 0.70) 0%, #BDDAC2 24.5%, #EED5A5 43%, #EECA87 62.5%, rgba(248, 163, 123, 0.90) 82.5%, #FB8800 100%);*/
+/*}*/
+
+/*#section-h3 {*/
+/*    color: #ffffff;*/
+/*    text-align: center;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 45px;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    line-height: normal;*/
+/*    padding: 200px 350px 50px;*/
+/*}*/
+
+/*#home-section1 {*/
+/*    color: #ffffff;*/
+/*    text-align: center;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 16px;*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    line-height: normal;*/
+/*    padding: 20px 395px 800px;*/
+/*}*/
+
+/*!* HOME page - Section 2 *!*/
+
+/*.home-section2 {*/
+/*    display: inline-flex;*/
+/*    flex-direction: column;*/
+/*    align-items: flex-start;*/
+/*    gap: 99px;*/
+/*}*/
+
+/*#home-section2 {*/
+/*    display: flex;*/
+/*    color: #7ABCDA;*/
+/*    text-align: center;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 40px;*/
 /*    font-style: normal;*/
 /*    font-weight: 700;*/
 /*    line-height: normal;*/
 /*}*/
 
-.navbar-nav {
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+/*#card-h4 {*/
+/*    width: 231px;*/
+/*    color: #3D3D3D;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 32px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: 120%;*/
+/*    padding: 59px 145px 30px 30px;*/
+/*}*/
 
-.navbar-nav {
-    display: flex;
-    width: 1122px;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 30px;
-}
+/*.read-more {*/
+/*    color: #3D3D3D;*/
+/*    font-size: 13px;*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    line-height: 140%;*/
+/*    padding: 0 30px;*/
+/*}*/
 
-.nav-item {
-    list-style-type: none;
-    overflow: hidden;
-}
+/*.cards {*/
+/*    display: flex;*/
+/*    width: auto;*/
+/*    height: 470px;*/
+/*    text-align: center;*/
+/*    justify-content: center;*/
+/*    gap: 16px 17px;*/
+/*    flex-wrap: wrap;*/
+/*}*/
 
-.nav-link {
-    color: #FFF;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-    list-style-type: none;
-    cursor: pointer;
-}
+/*.card-1 {*/
+/*    width: 290px;*/
+/*    height: 356px;*/
+/*    flex-shrink: 0;*/
+/*    border-radius: 16px;*/
+/*    background: #B0D8EB;*/
+/*}*/
 
-/* HOME page */
+/*.card-2 {*/
+/*    width: 290px;*/
+/*    height: 356px;*/
+/*    flex-shrink: 0;*/
+/*    border-radius: 16px;*/
+/*    background: #EEDE87;*/
+/*}*/
 
-body {
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 99px;
-    background: #FFF;
-    min-height: 100vh;
-}
+/*.card-3 {*/
+/*    width: 290px;*/
+/*    height: 356px;*/
+/*    flex-shrink: 0;*/
+/*    border-radius: 16px;*/
+/*    background: #FECEC7;*/
+/*}*/
 
-/* not sure this is still required
-input {
-visibility: hidden;
-opacity: 0;
-}
-*/
+/*.card-4 {*/
+/*    width: 290px;*/
+/*    height: 356px;*/
+/*    flex-shrink: 0;*/
+/*    border-radius: 16px;*/
+/*    background: #BDDAC2;*/
+/*}*/
 
-#signup {
-    display: flex;
-    height: 20px;
-    padding: 18px 20px;
-    border-radius: 59px;
-    background: #6FB0CF;
-    align-items: center;
-}
+/*!* HOME page - Section 3 *!*/
 
-#login {
-    display: flex;
-    height: 20px;
-    padding: 18px 36px;
-    border-radius: 59px;
-    background: #FFF;
-    align-items: center;
-    color: #7ABCDA;
-    text-align: center;
-}
+/*.home-section3 {*/
+/*    display: flex;*/
+/*    width: 1440px;*/
+/*    padding: 110px 110px 72px 110px;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background: #B0D8EB;*/
+/*}*/
 
-main {
-    padding-top: 95px;
-    background: #B0D8EB;
-}
+/*#home-section3 {*/
+/*    width: 456px;*/
+/*    color: #FFF;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 36px;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    line-height: 48px;*/
+/*}*/
 
-/* HOME page - Section 1 */
+/*.chart {*/
+/*    width: 764px;*/
+/*    height: 473px;*/
+/*    flex-shrink: 0;*/
+/*    border-radius: 20px;*/
+/*    box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);*/
+/*    background: #F5F5F5;*/
+/*}*/
 
-.home-section1 {
-    width: 100%;
-    height: 800px;
-    flex-shrink: 0;
-    background: linear-gradient(180deg, rgba(176, 216, 235, 0.70) 0%, #BDDAC2 24.5%, #EED5A5 43%, #EECA87 62.5%, rgba(248, 163, 123, 0.90) 82.5%, #FB8800 100%);
-}
+/*#chart-goals {*/
+/*    !*color: var(--Neutral-Colors-400, #9291A5);*!*/
+/*    font-feature-settings: 'clig' off, 'liga' off;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 18px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: 20px;*/
+/*    padding-left: 52px;*/
+/*    padding-top: 40px;*/
+/*}*/
 
-#section-h3 {
-    color: #ffffff;
-    text-align: center;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 45px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 200px 350px 50px;
-}
+/*#chart-reward {*/
+/*    !*color: var(--Neutral-Colors-Black, #1E1B39);*!*/
+/*    font-feature-settings: 'clig' off, 'liga' off;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 22px;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    line-height: 28px;*/
+/*    padding-left: 52px;*/
+/*    padding-top: 10px;*/
+/*}*/
 
-#home-section1 {
-    color: #ffffff;
-    text-align: center;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    padding: 20px 395px 800px;
-}
+/*#pie-chart {*/
+/*    display: block;*/
+/*    width: 271px;*/
+/*    height: 271px;*/
+/*    flex-shrink: 0;*/
+/*}*/
 
-/* HOME page - Section 2 */
+/*#countdown {*/
+/*    color: #1E1B39;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 44px;*/
+/*    font-style: normal;*/
+/*    font-weight: 700;*/
+/*    line-height: 52px;*/
+/*}*/
 
-.home-section2 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 99px;
-}
+/*!* TEAM page *!*/
 
-#home-section2 {
-    display: flex;
-    color: #7ABCDA;
-    text-align: center;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
+/*.team-wrapper {*/
+/*    margin-top: 10%;*/
+/*    background: #B0D8EB;*/
+/*}*/
 
-#card-h4 {
-    width: 231px;
-    color: #3D3D3D;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    padding: 59px 145px 30px 30px;
-}
+/*.team-wrapper h1 {*/
+/*    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+/*    color: #fff;*/
+/*    font-size: 52px;*/
+/*    margin-bottom: 60px;*/
+/*    text-align: center;*/
+/*}*/
 
-.read-more {
-    color: #3D3D3D;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%;
-    padding: 0 30px;
-}
+/*.team {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    text-align: center;*/
+/*    width: auto;*/
+/*    justify-content: center;*/
+/*}*/
 
-.cards {
-    display: flex;
-    width: auto;
-    height: 470px;
-    text-align: center;
-    justify-content: center;
-    gap: 16px 17px;
-    flex-wrap: wrap;
-}
+/*.team .team_member {*/
+/*    background: #fff;*/
+/*    margin: 5px 5px 50px;*/
+/*    width: 300px;*/
+/*    padding: 20px;*/
+/*    line-height: 20px;*/
+/*    color: #000;*/
+/*    position: relative;*/
+/*}*/
 
-.card-1 {
-    width: 290px;
-    height: 356px;
-    flex-shrink: 0;
-    border-radius: 16px;
-    background: #B0D8EB;
-}
+/*.team .team_member h3 {*/
+/*    font-size: 26px;*/
+/*    margin-top: 50px;*/
+/*}*/
 
-.card-2 {
-    width: 290px;
-    height: 356px;
-    flex-shrink: 0;
-    border-radius: 16px;
-    background: #EEDE87;
-}
+/*.team .team_member p.about-me {*/
+/*    text-align: center;*/
+/*}*/
 
-.card-3 {
-    width: 290px;
-    height: 356px;
-    flex-shrink: 0;
-    border-radius: 16px;
-    background: #FECEC7;
-}
+/*.team .team_member p.Github {*/
+/*    font-size: 12px;*/
+/*    font-weight: bold;*/
+/*}*/
 
-.card-4 {
-    width: 290px;
-    height: 356px;
-    flex-shrink: 0;
-    border-radius: 16px;
-    background: #BDDAC2;
-}
-
-/* HOME page - Section 3 */
-
-.home-section3 {
-    display: flex;
-    width: 1440px;
-    padding: 110px 110px 72px 110px;
-    justify-content: center;
-    align-items: center;
-    background: #B0D8EB;
-}
-
-#home-section3 {
-    width: 456px;
-    color: #FFF;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 48px;
-}
-
-.chart {
-    width: 764px;
-    height: 473px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    box-shadow: 0 2px 6px 0 rgba(13, 10, 44, 0.08);
-    background: #F5F5F5;
-}
-
-#chart-goals {
-    /*color: var(--Neutral-Colors-400, #9291A5);*/
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    padding-left: 52px;
-    padding-top: 40px;
-}
-
-#chart-reward {
-    /*color: var(--Neutral-Colors-Black, #1E1B39);*/
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    padding-left: 52px;
-    padding-top: 10px;
-}
-
-#pie-chart {
-    display: block;
-    width: 271px;
-    height: 271px;
-    flex-shrink: 0;
-}
-
-#countdown {
-    color: #1E1B39;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 52px;
-}
-
-/* TEAM page */
-
-.team-wrapper {
-    margin-top: 10%;
-    background: #B0D8EB;
-}
-
-.team-wrapper h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #fff;
-    font-size: 52px;
-    margin-bottom: 60px;
-    text-align: center;
-}
-
-.team {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    width: auto;
-    justify-content: center;
-}
-
-.team .team_member {
-    background: #fff;
-    margin: 5px 5px 50px;
-    width: 300px;
-    padding: 20px;
-    line-height: 20px;
-    color: #000;
-    position: relative;
-}
-
-.team .team_member h3 {
-    font-size: 26px;
-    margin-top: 50px;
-}
-
-.team .team_member p.about-me {
-    text-align: center;
-}
-
-.team .team_member p.Github {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.team .team_member p.LinkedIn {
-    font-size: 12px;
-    font-weight: bold;
-}
+/*.team .team_member p.LinkedIn {*/
+/*    font-size: 12px;*/
+/*    font-weight: bold;*/
+/*}*/
 
 
-/*Family Styles*/
-.title {
-    font-size: 5em;
-    text-align: center;
-    padding: 0.5em;
-}
+/*!*Family Styles*!*/
+/*.title {*/
+/*    font-size: 5em;*/
+/*    text-align: center;*/
+/*    padding: 0.5em;*/
+/*}*/
 
-.tab_content {
-    padding: 3em;
-}
+/*.tab_content {*/
+/*    padding: 3em;*/
+/*}*/
 
-/* Household Styles */
+/*!* Household Styles *!*/
 
-/* Page divider */
-/* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon':
-    https://codepen.io/isabelc/pen/MmrJgx */
+/*!* Page divider *!*/
+/*!* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon':*/
+/*    https://codepen.io/isabelc/pen/MmrJgx *!*/
 
-.divider {
-    margin: 40px auto;
-    width: 700px;
-    max-width: 100%;
-    position: relative;
-}
+/*.divider {*/
+/*    margin: 40px auto;*/
+/*    width: 700px;*/
+/*    max-width: 100%;*/
+/*    position: relative;*/
+/*}*/
 
-.divider-inner {
-    overflow: hidden;
-    height: 20px;
-}
+/*.divider-inner {*/
+/*    overflow: hidden;*/
+/*    height: 20px;*/
+/*}*/
 
-.divider-inner:after {
-    content: '';
-    display: block;
-    margin: -25px auto 0;
-    width: 100%;
-    height: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #F35D17;
-}
+/*.divider-inner:after {*/
+/*    content: '';*/
+/*    display: block;*/
+/*    margin: -25px auto 0;*/
+/*    width: 100%;*/
+/*    height: 25px;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 0 10px #F35D17;*/
+/*}*/
 
-.divider span {
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    bottom: 100%;
-    margin-bottom: -25px;
-    left: 50%;
-    margin-left: -25px;
-    border-radius: 100%;
-    box-shadow: 0 2px 4px #F35D17;
-    background: #fff;
-}
+/*.divider span {*/
+/*    width: 45px;*/
+/*    height: 45px;*/
+/*    position: absolute;*/
+/*    bottom: 100%;*/
+/*    margin-bottom: -25px;*/
+/*    left: 50%;*/
+/*    margin-left: -25px;*/
+/*    border-radius: 100%;*/
+/*    box-shadow: 0 2px 4px #F35D17;*/
+/*    background: #fff;*/
+/*}*/
 
-.divider i {
-    position: absolute;
-    top: 4px;
-    bottom: 4px;
-    left: 4px;
-    right: 4px;
-    border-radius: 100%;
-    border: 1px dashed #F35D17;
-    text-align: center;
-    line-height: 40px;
-    color: #F35D17;
-    font-size: 30px;
-}
+/*.divider i {*/
+/*    position: absolute;*/
+/*    top: 4px;*/
+/*    bottom: 4px;*/
+/*    left: 4px;*/
+/*    right: 4px;*/
+/*    border-radius: 100%;*/
+/*    border: 1px dashed #F35D17;*/
+/*    text-align: center;*/
+/*    line-height: 40px;*/
+/*    color: #F35D17;*/
+/*    font-size: 30px;*/
+/*}*/
 
 /* Footer */
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    bottom: 0;
     background: #B0D8EB;
+    align-items: center;
+    /*justify-content: space-between;*/
+    padding: 2em;
+    width: 100%;
 }
 
-#house-logo {
-    display: block;
-    width: 92px;
-    height: 130px;
-    /*background: url(<path-to-image>) / cover no-repeat;*/
+/*.footer {*/
+/*    display: inline-block;*/
+/*    width: 100%;*/
+/*    margin: 25% auto;*/
+/*}*/
+
+.quotes {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 .copyright {
-    display: flex;
-    width: 1240px;
-    padding: 24px 0;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
 }
 
-#copyright {
-    color: #FFF;
-    font-family: "Zen Kaku Gothic Antique", "sans-serif";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.links {
+    text-align: center;
+    justify-content: space-between;
 }
+
+.links a {
+    margin: auto;:
+}
+
+
+/*footer {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background: #B0D8EB;*/
+/*}*/
+
+/*#house-logo {*/
+/*    display: block;*/
+/*    width: 92px;*/
+/*    height: 130px;*/
+/*    !*background: url(<path-to-image>) / cover no-repeat;*!*/
+/*}*/
+
+/*.copyright {*/
+/*    display: flex;*/
+/*    width: 1240px;*/
+/*    padding: 24px 0;*/
+/*    justify-content: space-between;*/
+/*    align-items: flex-start;*/
+/*}*/
+
+/*#copyright {*/
+/*    color: #FFF;*/
+/*    font-family: "Zen Kaku Gothic Antique", "sans-serif";*/
+/*    font-size: 16px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: normal;*/
+/*}*/
