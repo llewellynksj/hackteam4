@@ -16,10 +16,12 @@
                     <div class="input-group mb-3">
                         <div class="input-group-text">
                             {% for task in query.tasks %}
-                                <form method="post" action="{% url 'family:daily_task_delete' pk=task.id %}">
-                                    {% csrf_token %}
-                                    <button type="submit">{{ task.daily_tasks }}</button>
-                                </form>
+                                <div class="family-tasks-delete">
+                                    <form method="post" action="{% url 'family:daily_task_delete' pk=task.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit">{{ task.daily_tasks }}</button>
+                                    </form>
+                                </div>
                             {% endfor %}
                         </div>
                     </div>

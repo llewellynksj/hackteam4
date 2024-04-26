@@ -54,6 +54,10 @@ header {
     margin: 2em;
 }
 
+.input-group-text {
+    display: inline-block;
+}
+
 /*!* Add opacity to header for contrast *!*/
 /*#navigation-opacity {*/
 /*    background: rgba(65, 65, 65, 0.1);*/
