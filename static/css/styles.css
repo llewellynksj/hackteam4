@@ -20,13 +20,7 @@ main {
     margin: 5em;
 }
 
-h1 {
-    text-align: center;
-}
-
-
 /*!*header*!*/
-
 header {
     /*position: absolute;*/
     width: 100%;
@@ -35,8 +29,6 @@ header {
     /*flex-shrink: 0;*/
     background: #B0D8EB;
 }
-
-/*!* Navigation *!*/
 
 .navbar {
     min-height: 95px;
@@ -51,6 +43,14 @@ header {
     position: absolute;
     top: 0;
     right: 0;
+    margin: 2em;
+}
+
+.title {
+    text-align: center;
+}
+
+.tab-content {
     margin: 2em;
 }
 
