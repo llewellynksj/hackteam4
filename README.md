@@ -102,6 +102,7 @@ The logo of our app embodies the essence of household organization and teamwork.
 The logo was used as favicon.
 
 ### Homepage
+![Homepage](docs/homepage.png)
 The homepage serves as the central hub, offering quick access to various sections of the app. It provides an overview of the available features and serves as a starting point for users.
 
 **Description of the app in the homepage**:
