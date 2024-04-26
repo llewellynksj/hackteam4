@@ -150,7 +150,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STROAGES = {
+STRORAGES = {
     "staticfiles": {
         "BACKEND": "cloudinary_storage.storage.StaticHashedCloudinaryStorage",
     },
