@@ -434,16 +434,9 @@ footer {
     bottom: 0;
     background: #B0D8EB;
     align-items: center;
-    /*justify-content: space-between;*/
-    padding: 2em;
+    padding: 1em;
     width: 100%;
 }
-
-/*.footer {*/
-/*    display: inline-block;*/
-/*    width: 100%;*/
-/*    margin: 25% auto;*/
-/*}*/
 
 .quotes {
     display: inline-block;
@@ -451,19 +444,29 @@ footer {
     width: 100%;
 }
 
-.copyright {
-    display: inline-block;
-    width: 100%;
+.quotes p {
+    font-size: 1em;
+}
+
+.team {
     text-align: center;
 }
 
 .links {
+    display: flex;
     text-align: center;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .links a {
     margin: auto;:
+}
+
+.copyright {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 1em auto 0;
 }
 
 
