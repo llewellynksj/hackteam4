@@ -39,7 +39,8 @@ margin-top: 10%;
     font-size: 26px;
     margin-top: 50px;
 }
-.team .team_member p.aboutme{
+
+.team .team_member p.about-me {
 text-align: auto;
 }
 .team .team_member p.Github{
